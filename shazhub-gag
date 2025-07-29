@@ -1,1 +1,276 @@
-([[This file was protected with MoonSec V3]]):gsub('.+', (function(a) _sDKvJtCnSEqq = a; end)); return(function(f,...)local t;local o;local d;local s;local g;local l;local e=24915;local n=0;local a={};while n<700 do n=n+1;while n<0xa9 and e%0x473e<0x239f do n=n+1 e=(e-985)%33204 local r=n+e if(e%0x1444)>0xa22 then e=(e-0x286)%0x884c while n<0x74 and e%0x45ca<0x22e5 do n=n+1 e=(e-851)%14669 local g=n+e if(e%0x2358)>0x11ac then e=(e+0x327)%0xa521 local e=91916 if not a[e]then a[e]=0x1 o={};end elseif e%2~=0 then e=(e+0x47)%0xb3a7 local e=12537 if not a[e]then a[e]=0x1 d=getfenv and getfenv();end else e=(e-0xab)%0xd33 n=n+1 local e=61188 if not a[e]then a[e]=0x1 l=string;end end end elseif e%2~=0 then e=(e+0x2e)%0x1287 while n<0x2d3 and e%0x17fa<0xbfd do n=n+1 e=(e*218)%17806 local t=n+e if(e%0x103c)<0x81e then e=(e*0x279)%0x5fe8 local e=75693 if not a[e]then a[e]=0x1 g=function(g)local e=0x01 local function a(n)e=e+n return g:sub(e-n,e-0x01)end while true do local n=a(0x01)if(n=="\5")then break end local e=l.byte(a(0x01))local e=a(e)if n=="\2"then e=o.qnXuGfkM(e)elseif n=="\3"then e=e~="\0"elseif n=="\6"then d[e]=function(e,n)return f(8,nil,f,n,e)end elseif n=="\4"then e=d[e]elseif n=="\0"then e=d[e][a(l.byte(a(0x01)))];end local n=a(0x08)o[n]=e end end end elseif e%2~=0 then e=(e-0x12a)%0x2968 local e=57542 if not a[e]then a[e]=0x1 end else e=(e+0x15c)%0xa7af n=n+1 local e=8885 if not a[e]then a[e]=0x1 end end end else e=(e+0x3ca)%0xbd7c n=n+1 while n<0x1e1 and e%0xe38<0x71c do n=n+1 e=(e+80)%7294 local g=n+e if(e%0x190c)<0xc86 then e=(e*0x10f)%0xad4d local e=76246 if not a[e]then a[e]=0x1 t="\4\8\116\111\110\117\109\98\101\114\113\110\88\117\71\102\107\77\0\6\115\116\114\105\110\103\4\99\104\97\114\76\109\65\111\112\101\77\83\0\6\115\116\114\105\110\103\3\115\117\98\113\99\84\105\106\115\72\108\0\6\115\116\114\105\110\103\4\98\121\116\101\73\66\115\90\108\72\112\97\0\5\116\97\98\108\101\6\99\111\110\99\97\116\79\118\83\113\87\112\101\90\0\5\116\97\98\108\101\6\105\110\115\101\114\116\106\66\88\87\77\76\113\88\5";end elseif e%2~=0 then e=(e*0x397)%0xd66 local e=48788 if not a[e]then a[e]=0x1 s=tonumber;end else e=(e-0x2f)%0x4df0 n=n+1 local e=5561 if not a[e]then a[e]=0x1 d=(not d)and _ENV or d;end end end end end e=(e+201)%26073 end g(t);local n={};for e=0x0,0xff do local a=o.LmAopeMS(e);n[e]=a;n[a]=e;end local function r(e)return n[e];end local h=(function(f,l)local t,a=0x01,0x10 local n={{},{},{}}local d=-0x01 local e=0x01 local g=f while true do n[0x03][o.qcTijsHl(l,e,(function()e=t+e return e-0x01 end)())]=(function()d=d+0x01 return d end)()if d==(0x0f)then d=""a=0x000 break end end local d=#l while e<d+0x01 do n[0x02][a]=o.qcTijsHl(l,e,(function()e=t+e return e-0x01 end)())a=a+0x01 if a%0x02==0x00 then a=0x00 o.jBXWMLqX(n[0x01],(r((((n[0x03][n[0x02][0x00]]or 0x00)*0x10)+(n[0x03][n[0x02][0x01]]or 0x00)+g)%0x100)));g=f+g;end end return o.OvSqWpeZ(n[0x01])end);g(h(160,"hRQu!PI^};:GVeU+IP"));g(h(212,"Nd^_CPuRc%raL7X<^LPX<R^CCXRdr^LR%bdLP%R7rLrr7uw^P^uacLXC77LL<%%vr<7%dS_LC^cLaPXr<PCPRcr_P7c7^CP^RPru7c=d^%Cau6rX7L2%_C<g^^aaXcd^_PuucaPPX%B%Ccu_%C%%7LY%^uPXrcL7XCacXcR7%77L<LLPPcRLr%Xc)L2<_<%^%_L<#r_u_7^Lul<_ddCLRd%P7eX%^cCduXrCL%XRDP^au7aC7CXr^7<C^_%X7%&_CBuR%uc_X%dXCuuaRJr7XXw%XJYLraLd<P^L_Ru_rrra7L^^^XcrCuRd7PC^uXuurdX_dXC>_<^LPL<CdaCaRcr^LP<uda_.u<rc777_^c^aR%C5RdgL^PP^ccr7RrdP_ruccPa_XR<fd7RcRLrmXX<LP^KL_r7P<r^cCPR_rRrLXa^^_7RrarLRX%LL<%%haXXdd^CCCuRaLuX7<%CaP_RauxcX^RCPRc%7LRIC^XCRPXr%a!0_^7_^dLCLXdGdCouq^%auXcdRC_R^Ru%aX<<%^uPLc7r<%d"));local e=(-9149+(function()local l,n=0,1;(function(a,d,e,n)d(n(a and e,n,e,d),a(a,d,e,e),d(a,n,e,n),e(e,a,n,d))end)(function(e,g,a,d)if l>294 then return a end l=l+1 n=(n-770)%6019 if(n%456)<=228 then n=(n*827)%28288 return a else return a(a(e,a and e,g,e),e(e and d,d and a,a,g)and d(g,e and e,a,d),g(a,e,d,d and d),g(d,d,e,e))end return a(d(e,a,e,e),e(g,g,e,d),a(e,e and a,e,e),g(e,a,a,d))end,function(a,d,g,e)if l>308 then return a end l=l+1 n=(n+603)%15901 if(n%1740)>870 then n=(n+789)%42639 return d else return g(a(e,g,e,a),d(g,g,e,d),e(g,e,g and a,e),e(d,e and e,e,d))end return d(e(a,e,a,g),d(a,a and e,d,d),a(e,g,a,a),d(g and a,a,d,d))end,function(g,d,e,a)if l>223 then return a end l=l+1 n=(n+933)%31057 if(n%388)<=194 then n=(n-1022)%15900 return a else return e(a(a and d,g,e,a),e(a,g and g,g,g),g(d,e and g,a,e),d(g,e,g and a,d))end return a(a(d,d,e,g),g(a and e,e,d,d),a(e and a,e,g,d)and a(e,d and e,e,a),g(e,d,d,d))end,function(d,g,e,a)if l>245 then return d end l=l+1 n=(n-996)%22887 if(n%1204)>602 then return a else return e(a(d,a,a,g)and e(g,a and g,g,d),a(d,g,a,g and e),d(g,e and d,a,e),a(d,a,a,e))end return g(e(a,d,e,a),e(e,a and d,d,e),e(e,e,e and g,d),e(d,e,d,e))end)return n;end)())local r=o.DWbQbvWM or o.HIxPHjLv;local ge=(getfenv)or(function()return _ENV end);local g=3;local j=1;local d=2;local t=4;local function de(b,...)local c=h(e,"{JI721(eZ}/i;agBae/2B(2Z}iB27g}DgIeege22}(agIBZ7aa;1IT(Zi/H;/JJB(B;JJ1(((/gJ11/e}7B;7(ZZa/e7B_7B}}}2ne7ZiJJaZ6;2JeeIe(I2J/}BT(1Ji;i2Ig/ag;aa7eZUaII2ie7aZgaiag1(;7I(e71}i(B;2g/y7B/}B/1J/BB}BgZ2B27}Zeg;;iI}(g;:JIieIi(/;eJ1eIe%B((7((ag1}i2ZBga7IZ2a((gai2IZagIIiZZ;iaZ1g;iJa(;17/iB(2Z}/72iIm21Ieigi2;IiZ7;gIpeI?(Zi;Ba/1J;1Je_7(C/(BZ2/B72B/}_(I//1B/Ja}2ge7;Z(e1;aJZ(/i;1^;1JeI2}iyB(J2a//B?2I}27}/Jgg2JeHgJ22eiaBI;Zga2iBJg(Ii2G(/;&i(/i;h}(%/ii(71/7Bg1v}BB2a(Iee}a2J;(g;z1};}I/1iiBJge2i}611}2e/eg/7;ZgII}7Be7BZi}/JBZggIIiZIaJI2(B;g/Bue1I/2B(ZatZ2a/_B;2e}ZZ(aZI/e;;gI&}I2(1((}aJo;1giM11i}JI1a/aJofg/1B}2i/}/Z2g}i}g7J}egZ717Z;;7JZe(JigM21(/Z2I/aJv((/e!e1/1Zag2i}ag;a773e(;ZJ/i17IZ7/BJ}1};S4ieJ;RJ}1721/*gZ7/Z;7J/2B271}aa/IBZggb7}J7(/i(:Z1/BJe2i1Jq(Zi}}}BI7;ZggHZ1g}2/e;gI7JZia1;7I#((iZK//}Iee2i/Xa1}/}y(?;Z7Be2}72(e1I7gI/J1.J2;97Jee7i/4;1gX7eeiise(/(/aa1gi<Bg2}7eZaa/I;egJa}eg47/ZJ(i;(?g(QiI2iieJ11B}JJ211ix3Z1}7}ZBa;IgZjIZZ1gI7aeB(ag7J (Ii21};al;(}ieJ2(1(2Be12/(/;7I/Ig72I}ega77ZZZgI(Z2a}JBe;;a;;eIiB;I2Z/eT(1B/eBegJ7ZZ2a(IZi;IaZiaI7JZ7(eiaK/1;/g2J;IJ2(I/a}iB;7g}GgIZJge2i}ggJ2.2Y;172ZZaJIZee;/J1e211/BBZ2/};IB/g3J1I/BB12}/JBJaJI(e2;(JZ/aIiZt;gi7J71(/ZB/}gBB(I/ei27}/aBe2}}7BIBI(}aaIBJie(igJq(ILJ(ii;J7eJii;w2(i7>Bg}2ZZ;ag7*;72}}/geg/1gg77}7IieJi(aigJBBB12/IB22(ga1a/J&jgJ7aZ2a(IZ;g7geBag71Z2;eI/(B;/II?J1(/2B(2Zga11iZB1g77aZ(aZI/;g77}7ai7gee;/I(eJ1gitFI12/(BZ2/T1Ig2J}Bg27(ZZ7}}B;IJi}Zig7/1iaZHB17aJI7611(/ZB/2;}BB12I}2g(Za;g21}iiIa77Ie(;ZJ//a77Z2aJa22Z;aI7J;}1k117i(D}g}2ZZ;ag7t;12DZia}7ZZ1a;Ie7IieI(e/iiI1BB1Z/IB22(a;1;/iBg22/JBi22I}Zm;;JgeWJZe1aIIa(B;B/BIB1I/2B(}iMB2g/iB}1(/e/(2fZBgZ7I2la177ZZa/IBe;aIJ1((e2J1(/(/JV(E/JAn11/iBJ2(2;gg7;Z7gI7/7ZagIiIg;(IJe;1e/gB/2;}g22iJBi2a/2gBaa7IZ!aII2i/IaZa;BiB7/(Ii2S(}iJ}(/;I3}(zi}F11a/aBZ1e1ug72}}/geg/egg77}Z1Z2I}(aiBJteJeFJ}1;/B)22B1;B72g}7g(2IZaag;a7Le#;IJ2/eJ;Z?iaJ;(7ieQZJ(}iq/1g/eBg2a/+gi2/IiZI;gI0eIh1Zia;IIeia_iJPZ12/(BZ}(Xi1J/iBe2Z7e}>a/I;egJa}egeIgZ/a}Iiei(J;(:21(/Z2aiJJI7giJ=Z2B}gB77BZBB27i}7g2J2Z}g7I7ZI(7;Jm(1Z//22ie:21e}eBi2}/;gB2(eIg72(Ieeg;/J;(gLIZeaZI/ee;Z/a6g1d/IB2}7B}1J//Be2(/iga22ZB}/J7Z/aJ71Ze(eg2-/1;/g17;e*((7iJ=g1B1gBJ2g/C/(2;};aa7;}JgeIaZIZZI/eZiBJge(;e;((;i}i;2Z/1hY62e}BF7i}/g;71Zga}7ZJ}e7i;Mg()B2e};BBZ1B; g71e/}}1B;7ZZ/a;ZJB277}(g/gZ1igJ7IeBZIB(eiaJJ7(/i1;d7e/iBa1i7i}7ag7QZII2}ig17/ZeaeIgJ7Zgi(EZ1/gB(aigJ(1ai2ma1}iJ8J2;/i/27e}agg7i7gaI7eZaa}aZeJ;JjBeI;1;2(ai_ 71Z/7iz2e/Ige7/}(gJ7IIJeg;2J((ZB;ZJaeBe(ei1JZ2iig<i1J/i}7B17(ZZa/egg72hZgaaI}e}agIJeIi7I(e7;Z.}(JiJ}BBe2I}2g(ZiBI7a/Z;Z2eZ(ee;gJ/(;ig17;7I(eZ;eJgBaee/,BI22a}1e/Z#:2e}gBe27}igi7(}1ZgIJZeaZI1IZi;IJee;7;I1}/aBB1a1;R12Z}iB+7i2ZaB7/eBaIIge};/i}Je1;/g^D/2c}1}/}6(1Z1gge12}}B27i}Ieaa(IweI;2e};}I(eJ;;J2(7;(/e=_2/};ggZJ<e1Z/1/ZJ;/JBeaJ(Ze2;(JZaI7VZIalI17gZ1ae(Ji1JI1ZieB(J2}iB}2}1a;(2J}7g/I}ZJaJ7JZ1a1g71a;JJZ(T/7g}IJi(Bi12}Bga1J}1B1>7}Ia}7gZJgJ722J;ZI1eB;ZJZ(aiJ5(I7i7B}17//i;2;/eg1ae77e/;;JgiI7eZ(a2IJeZ;7;g2I;euZBe2g}/g;7gg212/7Ba7a}(eaaIIfeI;2((;aIgeB1BigWI12/(7Bi7Ba1;i2iI72}BB(7BZBga7gZee1;gJZ(/i;1I;JJZ(/;1?;(7iZ}gek((Jk77gJ(7iZeRZJa;I2e(;Z1Ba}IKe1a2a21I;JJ(e12B/;BI22}(7B}i^t27/Igi2IZa}Zqaeaa;;JJe(2i(LZ}a_a(JiJJJB1(J}Zg/7;ac2J}1gB7a}/g}2JZ;a2FiZJ;eJB(Bi.I*(J;^Je((/}f;1J/;B71i71}IaZI/e;J4}1giJeei;aJg1BaIJB(1iB/ehB2/};ggZJ&e1Z/1/ZJ;/JBeBq}1a}7Iea;a7Ye7;2aIeeii>a1giB}BB22I}2g(e;gi2g}}ZJg7I2e(;Z1aaiIieaaJIII(/iJB(}iiu1(2(2ai2B/JZaB(7HZIa2e}aa7(ZJaJ727I/iJi(};;JBJg;2JJJ2ZeMa1g/i/gII/eBaaeIae/;;JgiaI7ZI;aIeRi(Z/gb31IB21ei/Bi1b/e672e12;i7B}JeaaIIheI;2ea;}IeeJ1Bi/!I12/(7//iBB1}/e 217/iB(7gIaZIaUIIe2lBeia}I/XB((iI_21(BZ1Bi; g11i2}1gi7ZZ/a;}2g12lZeai;}I2(;igJ0;ZI(e1;1B}(Ii2J71eiZ}ZgZ7i}}ag7RZI2eZgge7/Z;aeIge}}JJ}(};;IkBB1B/IB22(aB2BiOgI1I}7BI2}}Zai7gZ7agI1Za(eaBb/1;/g12i/Ya(}(Zw 11//B1%I/ige2i2/g;2EZBg(I}e}a;JBepegIe(i;Z*gJZ}e^i1a/gg12}}}/Z7c1BeBgyIIe2;((2;B7Ie7;;Iee2e(B2(}iZ./1}iI)71(7}}Ja;IgZ6II}XaeIieBi1IIJJ(Zi2?(1Zqa1a;nJI(JiZ}egB7/Z;age2ge7/Zega7(}r(B;}JI(2i(2};(JZ(a;eBM(7i2Bagi27ZggY7I;i7i};}/RBZ(a};7Ia((iZG//}Ja(B;FBe1i/iB}7BiIEI2i/Iga2ieIg17IZ2ae7I1ea;Igeg1BiaCI12/(7Bi;wi(1(Pg;2}/2/ZIg}gg771I7e};(JZ(/47Z5;JII(}1ei2B/2;}g77i2B}2e/;gB77}egg7(}7ga;}I2(;igJ&i}J1e/iaJ;(}i7A;(JiI}eB27/Z;age2B271Zage7Z7;i27IZe;aI/j}(7/;Bg1mg2(+iiBa2;/J8G1I/iZ1aBIZe/;;(Ta1I7ZIa}I;(i;ZJ}HJ1}/2B(2Zaa1i/JBB1H/}B/a}7ue;;gIyiZ77ZI;;JBeg1Bi}TI12/((Z/iJ7Jiim)22a/2B;ai7;egaLIIi}7Ie;;BIgIgi7I(e(ieJB1;iJJn(Iii}1B(7ZZ/a;ZJg722}7gI721;;a7G11a8J1(Z;2jB(w2B/7BI22}(7;}iggaB7BZIa2I(iB7}ZDa/7}7IieI(e/;7J/(}i;xe((2e/Ig/7;Zg2;/Jg17/}igg7gZeagI}J1e2iZO/1;B2eIii3}(2/;>a12/e#OLIZ2B12;IiZI;gIweIJZZ1a1JiZz;aiX_I12/(BZ2/1;(/Z_}7BP7(ZZa/eiBO7J}NaiIi7Zig7Je/;}IIQ11i/ZB/2;BI1Z/ehJ2i7}ZBa;IgZGI(Zag/72eB(a;2Jt(Ii22}i}Sae%;7J7BI2g}(gZ7/}eag7LZIa1I;eZ;/J;g7IgZI;1J}e71iiiBg1P/I2eiiB/1e/1zIIJ}gB:I(}2ai7/}Ig7;7Jg((iZu//IJeeIieBe1ii/J^1Ji*}Jg(72Z(aZ}Jaa7iZ1e7a1J((Zi/1g;7Id(giaO}1}igRJ1I}7^(17/Zg}2J}JeBa1IIe2;(ZZa;I1e;a2i7>g1(/ZB/}7BB1a/ea}1;}aBZ1o/JZJg2I2e(;Ze2aJI;1JaeI((e//sB(}iaJ21eZ}M;2a/Zb-aB7/ZIa2I(iBIB}u;JI1Z2a/JB(iiB/a811>/IB2/aRe1g1;BJ2Z}iZ1gIIZe/;;e1aJIiZZ/;Iee;}BJ((}igjZB(2Z}/g;7g/(gI72Z(aZ1ie;;gIUe7;2J((Z;;2J1giJsI1(/(BZ2/};I22_}Ig27eZZaiI;}-JsIIe1;(J;(/i;=gZ,aZx21e/ZBi2;/eBT12}1g(7iZ/gJIgZqaII2ZB;ZJi(;;JJY(2i2I((Z//Ba2g/JBI2B}(B/1&Z;gJ7^Z}a2I(eZ;/7:(g;JJI(ei(N/1/;;<a1M/7B22e}ZB17;/?J17IZea(7Xe/;;Jge);ZJ2(eiZ%a1;ip8&eIi}B(2}}/ga7g}7gI2(/JaZIae;;BIxeI;2J(e;i/Jp1gi:5I12/(BZ1B};BJ2b}(g27(ZZa/IaegaJIIe2;(J}(/;gJ/(Qi7621;/ZB/2;iNI12I}(g(2IZ/a;IgZcg/I2ee;ZJ;(;iBJd(Ia74(1Z//Ba2g/3BI2e}(gZ7/ZaBk7sZIa2(ega7gZi}iIIZeaaa((;;7JB1BiIRg1}//;(gi2JZgg47IBe2(Z}BJ7/JBe1;IJ2((IZe;;1J;e217/1B(2Z}/BI7g}xgI71}uaZI/e;J2Z}g2I}(};aI;ZI;7II:71}/(BZ2/C;(W/}vO1Z7e}2a/I;egJJ}egZ7121;;7JZe;}I?(i}X/}Bg2;}gB.i}B12B/;ZigIIgZEaIZag(I}Z7ag7JJx(Ii2h(1Z//B;2g/DBI22}(gZ7//7ag7EZIa2I}eZ;/J;(g;sJI(2i;7I1//;Bg12/IB12(}}g/2la7g>7IZ2a/IZei;;IIi1;IJ2((;gP/1a/gJI}I/2B(2Z}Bg;7g}qgI7eZ(a}I/ea;gI_eI;22/(Zi/#;(,i64212//7a2/};gg1+}Ig17(ZZaaI;Z7aTI2e2;(JZZ/a}Yg(1iI.}1(/}B/2;/;BV2}}2g/7ZZ/a;Ig}VaII}e(;BJ/(aigII(ai2mi1Z/;B;2g/fD2(J}(gg7/ZBag7UZIa27(eZaJJ;eI;DJI(2i(Je1/iJBg1e/IB12(}gB77;Zggl7/Z2aeIZe;;;IIi1;IJ2((;nn/1a/gJI}I/2B(2Z}gg;7g}:B2(}Z(a}I/ZI;gIVeI;2Ig(Zi/k;(biQ,712//7a2/};gg2_}Ig17(ZZB}I;egaWI7e2;(JZe}i;Mg(=iI(M1(/ZB/2;}gB+2I}2g}7ZZia;IgZzaII2e;!}J/(aigJi(Ii1v(1Z//yQ}7/lBI22/JgZ7iZ;B>eAZIa1I(e/;/J;(g;(1g(2iZAZ1//;BB1*/1B22(/eg/7;Zgg47IZ2a(IZZ};;Jge+;7J2((iZ:/(i/gh41I/(B(2Z}/g;1(}5g772ZZaZIie;aI(1eI;2J(e(i/Aa1g;I2I12/eBZ2a};gg2w/2J}7(Z/a/Iaega&IIe2agJZ(ii;J8()i7P21(;eB/2;}gBJ2I}2g(7iZ/a;IgZJg2I2e(;Z1igJ7IeBZBJ(eiaJ;/(KieJ717/(QI2a}gi/aB71ZIa2I(gi7/eag1IgJ7(}i(SZ1/J;eOi}JP(Z2e}}g/7;Zgg(7IZ2a(I}Z9;;JgedIiZ2;eIJe;;B/gc!1I/2B(2Z}/g;7g}Jg(72Z(aZ/Jaa7e}2e7;gJ((Zi/1I;eII(e/eSi(/;l#J(b2J/7g27(ZZJi/JBI7B2Ba(7i}Ja7I/e1ZAJ}(}ieJ/722a/7B>2I}21(//B72//IZEaII2e(;Z78(;igJn(Iies(1Z//B;2g/?BI2/aegZ7/Z;B77?Z7a2I(eZ;g(J(g;9JIe}i(A}1/ig7g1W/IB22e}Zg/7;Zgg77IZ1a(I}e/;;JgemB(J2((iZy;1;i>V+1(g}B(2Z}/Bi7g}JgI72Z}aZIBe;aGI3eI;27(Z1i/JJ1gi1AI1Z/(BZ1B};B12.}(g27(ZZa/7aega1IIei;(J}(/;gI1(^iep21;/ZB/2;i<Be2I}/g(7aZ/a;IgZPggI2ea;ZJg(;igJ#(I;iV(1a//&72g/JBI2/}BgZ7/Z;g17cZ7a2IZeZ;g(J(g;dJI(ii(w}1/ig7g1m/IB22}}Zg/7;/KJ17IZ1a(I/e/;;Jge8a/J2((iZ*;1;/Bnw1(g}B(2Z}/g;7g}JgI72/1aZI/e;;BIoeI;2I((Zi/5;1gW;^I12/(BZ2/};gg28}1g27eZZa/I;ega+IZ}g;(J}(/;JTg(JiI!11(/;7B2;}gBp2e}2ge7ZZgIJIgZwaI7be(;}J/egBgJy(7i2GZ1Z//B;12g;BI2(}(gZ7/Zaag77ZIa271eZ;/J;(g;LJI(2i(Je1//;Bg1J/IB22(}ZB}7;Zggu72Z2a(IZe/g2JgeJ;IJ(((i}F/(HB7.G1I/2W12Z}ig;1:a>gI71Z(aiI/e;;g7I/e;2JZ(Ziiu;1giNYI(;/(B}2/}ggg2J}Ig211ZZa/I;eBanIIe2;(JZ(/i;Eg(,iIj21(/}B/2;}gB_(J}2g(7ZZia;IgZza2I2e(;ZJie7igJh(IJeeI;JPa(ei7H2B72}}(gZ7/B;1G}}BP2ZI(eZ;/J;(g;2JI(2i(J/}//;Bg1G/2B22(}ZB;eJZggJ7IZ1a(IZe/;;7(e_;IJ2(ZiZ-i1;/gJB1I/2B(2}}/g;7g}1gI72Z(a}IBe;;gI:gI7(eBa(Ig_a(7iuzI12J/1}/;^Z172J}Zg27(ZZ7a}ig;77Z7gZ;eJ/(/i;zgZ;aIA1(a/ZB/2;BJ11/gB}2}/;gB2!2gge7eZ1gZ7i7/gJIge2;7IZ(ii;g2Ba2g/_BI22/.gZ7/Z;ag1gZIa2I(eZ;/J;(gaII+(2ie:Z1i/;Bg1ri2BZ2(}/g/2JZggd7I}(g7IZea;;I,er;IJ2Z(iaf/1B/g-71I/eB(2Zi1g;2I}_gI72Z(aZ7;Zi;gI1eI;ZJ((Zi/f;(1iVc112/iBZ2/};gg}g}Ig17(ZZa/IaegaU2Je2;(JZ(ii;Og(xie%21(/ZBi1I}gBq2IBe11/(ga7a/IZJa2I2e(;Z2(Z;iBJ1(Ii2S(;;3i1gi/,1B72}}(gZ7/B;1S}}B02ZIeZB;/J;(gJ7eeaNJi(i;gJJ(Ie6J11}/iB;1a1;F71N}(g12/Zaag%(JBeG;IJ2((;In/1;/gb)ZS/2B(2Z}/g;7g}NB213Z(a}I/ZE;gI*eIa(Jg(Zi;o;(7i,KI12iZJ22/}Bgg27}Ig27(/ZgZI;ZJaWI1e2;eJZ(/aZzg(2iIA21(/ZB/1g/gB_2e}2gZ7ZZ/a;IgZeaIIee(;aJ/(;igJG;oi2Se1Z//B;2B/lBI(7}(gZ7/Zaag7XZIaeI(eZ;/Jae7; JI(2I(e/;7J/eI1J/eB22(}Z1a/;gB1e/:Z1giIZe/;;1Bg17(Z7Z(J/eBa1Je(gi};21/iJpa2a/0B;2e}Zi2a}Iie;;gI_eZ;2J((ZiiJJ1gi^sI;2JZ(JiZJ^gB1h}Ig27(;}2B/6gaBaZ2g}7BZJaZI7Ig;1J}(i}C/}h22;}gBxZZBa1Z}aaa2J/CB(7e}(e(;ZJ/(;igJY(Ii2c(1}/gB;2g/E(}/1BB1;7i}Iag75ZI7a}(a}77ZggJ;SJI(2i(YZeJ/;Bg16/IBe2(}Zg/7;ZggE7IZ/FrIZe/;;IIe6;7J2(eiZHg/J/gS 1I/ZB(2}}/BtZ7}wgI72};aZIie;g-(:eI;2J((gi/T;1gitF112/eBZ2i};gg2m}IJZ7(ZZa/IgegaIIIeZuiJZ(/i;Jg(&i7*21(/iB/1J}gBI2I}2g(1Z/ea;77Z>aeI2e};ZJ/(aigJe(IiZN(1Z//B;(e/CBe22}agZ7iZ;BD7aZIa}I(e};/J;(gaII}(2i;wZ1;/;Bg1d/IBa2(}Bg/2sZggq7IZ2gIIZeB;;I1eS;7J2(;;Jy/1;/gOZ1I/1B(2/}/BrZ7}rgI72ZgaZIie;g (MeI;2J((ai/G;1g;I7e12/eBZ2g};gg2L}IB;7(ZZa/IgegaJIIeZviJZ(/i;6g(<i7t21(;eB/2;}gBJ2I}2g(2ZZ/a;IgZtIgI2e(;ZJ/(;igJz(IieS(1}//B;2g/rBI2/;ugZ7iZ;g77NZ7a2IeeZ;g(J(g;^JI(}i(u}1/i82718/IB21I}Zgi7;/uID7IZ1a(I/e/;;Jge(tgJ2(ZiZM/1;/B+b11/2B(1e}/g;7g}&gI72Z(aZ7}e;;gIYe7;2J((Zi/Ji1gi=?I1(/(BZ2/};T(20}7g27ZZZaiI;ZIJ1IIe2;(Ie(/ia&geIBID21e/ZBi2;}gB 12;}g(7/Z/aBIgZ?aII2Zg;ZJi(;; J!(7i2L(ee//B;2g/JBI22}(ga7/Z;ag7JZea2I(eZ7/ZgaeIgZ((1;;6Z1//;1Ji15g1}/}q;2B/-/g21}}gi2}2ZgB7;ZIaJ7(e};/BI?i(J/g^n1IJZ1e//5(1J7B}(gI72Z(7i}}g/7JZJg(;1JZ(Zi/T;Z/a.H712/(BZ2//(gg2P}Ig2(2ZZa/I;ega>IIe2aZI1(/iaLg(JiI821(i/JJ2;/cBO22}2g(7Z};g:IgZ7aIIee(;ZJ/Z;a1Jh(1i2<}1Z/gB;2gi}BI2Z}(gZ7/Z;ag2I}7a2IieZ;BJ;(g;lJI(ii(Mi1/iJBg1-/IB2/2}Zgi7;Zggl77Z2a(2ee/;;JgeJ;IJ2((;7o/1;/gCJ1;/2B(2Zgr11iYB171}}BZ2gZBgg;BIBeI;2J(iiIB(g;iJ}e(}1JI(2}/0Z2B/gt(1e7e}Ia/I;egJeZegZJ}eaa;7Iee;7JeQ11;/ZB/2;J71giIB12}/7ZigZIgZMaIeiae7JZgiIIaZI/1J;(B;23gBa1I/SBI22Ba2}/eBJaB2JZIa2I(;/IBZ;a/I}e1;1I/(aigBBeIiBJ211/aBagi1JZgg37Iae2iZ/ge71}Ig2IeeZZ(J}e(;Z;g14ig61(2i;_ama7B}/gI72Z(JBZig}77(1gZI}Z2a;Ia.aeJimxI12cL1aiZga(7/1h11ZZZga2e}iBI71(eg/IiZ(agiaJ7(liIL2;(J/(7i/JIBE2I}2g(7Z/?a;IgZfaI11e(;ZJ/(aigJR(I;(7i1Z/iB;1^/MBI22}(Jg7/Z;ag7JZIa1I(Z/&/J;(B;xJZ(2i(xZe/aIBg1J/IB12(}ig/2g/Igy71Z2aaIZe/;;Jge(;IJ1((ii-/1g/gIV1}/2Be2Z}ig;27}8B21JZ(aiI/Z1;gISeI;2I;(Zii*;(Ji4z212;(B/2/}agg2J}Ig}7(}/OBI;ZJa_I;e2;(JZ(/;IOg(JiIde1(//B/(;i1BO27}2ge7ZZia;25ZeaIIee(;;J/(;igJf(}i2^/1Z//B;2g/KBI1}}(gi7/}zag7PZIa22IeZ;iJ;(g;-J7(2;Zbi1//aBg1i/IB22(//JB7;}zg.7/Z2a(IZe/g2JgeJ;IJ(((i},/1;;awC1I/2Be2Z}/g;2Z}JgI72Z(g2I/e;;gIJeI;2J(e/a7?;1giMeJ12/(BZ1;iegg2V}IJJ7(ZZa/1IZJaAIIe2;;JZ(ii;e((0i(2}1(/ZB/1I}gBJ2I}ZIi7ZZ/a;71Zoa7I2e(geJ/(;igJJ(Ii2d((/g/B;2g/C1J22}(gZ1/i_ag7uZIa2I(gI;/2Ie/;4JI(2iBx}1i/;1J1s/(7}2(}Zg/21ZBgJ7I}(J(IZe/;;};eU;IJ2eZs(3/1a/g1B1I/2B((Z/eg;7B}3g772ZgaZ7;Zg;gI7eIJJJ((Zi/m;(/iNj712/}BZ2/};gg1e}Ig27(ZZa/Igega<Ige2;(JZ(ii;JV(0aICZ1(/}B/2;}gpZ2I/(Ji7ZZaa;ZZZnaII2e(;ZJ/(aigJ7(Ii1d(eZiBB;2B/RBI22aIgZ7//(ag77ZIa1I(eZ;/J;e;;,J7(2i})Z1i/;Jg1a/IB12(}Zg//7Zgg<2}Z2a}IZei;;Jge_;II(((i}./1B/g.J1I;27g2Z}ig;7g}t1272Z(JgI/eB;gIzeIaIJ(}Z;BS;(Ji_Z(12/}BZe//}gg27}I217(gia/1;Zga_I1e2BBJZeBi;7g(JiIze1(I B/}7}g)I11}2g/7Zi}a;IgZuBIIae(;;J/e9ige2(I;(7i1Z/BB;(?/kBI22/Z027/}IagiJZIa2I(eZaeJ;eI;3JZ(2iZKZ(/;}Bg17/IJg2(};g/(;/egc71Z2BBIZZZ;;2gZa;IJe((7id/i(/g7L(//2B}2Z;1g;2;}hJI2;Z(aiI/ZZ;g2;eIB217(Zia-;igi?7512a(7i2/}Bgg}e}IBg7(iZgJI;ZJaM1Be2a2JZ}/a0Eg(7iIeB1(FaB/2;/;B*2(}2g(7ZZaa;1gZIaIIZe(a}J/e/ig2)eei2M/1Z;aB;i7/3B22g}(ga7/}jag7sZIg2eeeZ;gJ;(B;nJe(2;(I21//BBgeZ/IBZ2(}ZcI7;ZBgc71Z2aZIZ}/;aJgeI;IJ1((72 /1;ieby1(/2B(2Z}ag;(g}JgI7ZZ(1;I/ZP;g1be7;2J/(ZJih;;}i97I}J/(B;2/a(gg/1}Ig2Z/ZZa;I;ZIaUI2e2g(77(/iB#g(JiIZ<1(/Z,Z2;/7Bb2I}2g}7Zi/g}IgZ1aI/Ze(J2J/};;hJ*(ei2(e1ZJFB;egi1BI2}}(II7/BJag7PZZa2I}eZ;BJ;en;T7I/;i(6;1//aBg;;/IB2/}}ZBp7;Zgg971Z2G(7Ze/aIJgB2;IIi((gZJ(1;i2SQi7/22J2Z;/Be7g}(gI(gZ(7aI/e;aJIhe(;2J;(Zi;W;egi/tI1}/(B}2/JZgg2w}1g27aZZa/I;ZJay1IiJ;(JB(/2=Egi=iI72ZB/ZAJ2;BBBCii}2J(7}Z/g7Igi/aIZ}e(;ZI;(;;7JH(}i2:Z1Zi;r;2g/(BI/7}(gZ7//;B(70ZZa2I;eZa}J;Z-aJJI(;i(2g1//;Bg1D/;B22;}ZBI7;}XgP1I;;a(Ige/aIJge/;II(/&iZJI1;;i6T1I/2B(1e}/BI7g}ZgI7(Z(BZ7le;a2IDeZ;2I.(Z;;qa1giZTI/;/(BZ2/};B}2=}Zg27gZZa;I;egaIIIei;(J}(/i;)geI;;z21g/Z2I2;}gBt2I;/g(7BZ/g2IgZJaII2;h;ZII(;igJn(Ii2I(}7//_12g/7BIe(}(gZ12Z;g}7_ZIa2I;eZB/IZ(g;iJIgZi(IB1//;f(1./gB21i}Zg/7;/qBa7I}Ja(e,e/;;JgZIa1J2e2iZIc1;/g5Y(2iZB(1e}/(J7g}wgI2(}iaZ7/e;1MIGeI;2IZZ2i/Ja1g7sSI12/(m/1i};bG2Ei(g27(ZZg;22egg7II;(;(JZ(/;gJ((L;(L2;}/ZB/2;i^KI2I/}g(eiZ/a;Ig}IagI2Z;;Z7i(;igJ.e2;}4((B//J;2g/%BI1(/ggZ1IZ;117pZIa27ZZJ;/71(g21JI(2i(J/((/;JZ13J(B22(}ZB;1IZgBi7IgJa(IZe/ag7Ce agJ2aeiZD/1;;OJJ1I;JB(Z7}/g;7g/IBe72/2aZZ;e;;gIUZ2;iJ(Zei/(I1giQoI((i1BZ(/};(22k}Ig22Z}ea/2aegI2IIe2;(I/eei;7m(_;a<21(/ZU;(V}gJ72IgIg(7ZZ/gg2ZZoB(I2;e;ZJ/(;a!21(Ia}H(aI//B;2g/cIZ22/IgZ1BZ;aB7Y}IgJI(Z7;/2B(g;;JIe23JAZ(1/;J;1T/}B2e(/8g/2eZgB;7I}Ia(1ZZe;;I}eTIBJ2e2iZJk/Z/g_;1I//B(2}}/ga7g}FN172Z(aZ7Je;;gIDZIy^J(e7i/ka1gi;rI12i/BZ17};B}2#}2g21(}Ia/7(ega7II/};(JZe1i;J/(.iIX21//ZI/1B}gB;2IJZg(}JZ/5;2iZ-agI2/;;Z1J(;ggJ2(I;Fl(;2//(J2g/(7g22/7gZ7iZ;aB7uZ1a2I(}i;/J;(g;ZJI(2i(wZea/;Bg1n/}B22(}Zg/1BZgg 7IZ/a(IZe/a;JBeA;gJ2(eiZJe1;/gJ21I/gB(12}/gg7g}XgB72}JaZIie;;gI.Z2;1J(e2i/(J1gi_vI12/ZBZ11};B/20}7g27(aIa/7Zega IIe2;(I//Ii;Ji(FJJP21(/ZJ/(I}gBa2I/Jg(2eZ/gg7gZ+gJI2i;;ZJ/(;igIa(I;JK((e//Bg2g;PFg22/7gZ2eZ;gZ7O}2aiI(Ze;/7}(g;bJI(2;/XZ(e/;#a1N/2B2((gKg/2}Zgga7IZga(7/;B;;Iae8DeJ2((iZY/(g/g%a1Ii7B(2/}/F;1_}OBN72Z}aZ1;e;;gIaeIa2J((Zi/JI1ggN?i12i(BZ;g};2/2f}IgZ7(}}a/7;ega)IIZ(a/JZe;i;(7(OiI82(ZiaB/1B}g7B2I}2g(2//Ja;2IZ8J;I2e(;ZI;eaigI1(I;2&(1Z//Hg(i/>?Z22;ggZ7/Z;Bx2eZIgiI(B1;/J;(gaIIe(2;gDZe;/;Bg1ui2u}2(iJg/eiZggN7I}(giIZ}2;;Iiec;IJ2eZiax/ee/g7J1I/2B(1//;g;1/}mg}72Z(aZ7;Z2;g7aeIaZJ((Zi/Jg1Bi6IP12I1BZ2/};Y<1/}Iz77(/ga/I;eggI7/e2g(JZ(Bi;Tg(L;27}1(;}B/i1}gBz2I}2J;7Z}ia;2BZba7I2Z(a1J/e;ig27(I;1y((ZB1B;1g/_Jx22/JgZ(/}(ag2wZIB)I(Z(;/2;eJ;dII(2I7dZ(Z/;=2};/Ih12(}ag/7aZggJ7IZ2B}IZe/;;I}e.;IJ2e(B24/(;/gRJ1Ii1B(2Z//g;2;}PBI72ZZaZ2/}(;gIBeI;eJ(}ai/N;(7i%J712/(BZ2g};Jg1e}IB17(_;a/1;egyb7ge2aeJZ/<i;1I(#gIJI1(i}B/iZ}g112I}/7I7Z};a;7WZ^a7I2e};ZJ/ZBigJE(I;hz(1Z//B;eJ/RBI22/JgZ7/Z;ag17ZIa2I(Z1;/J;(gauJ7(2;epZ1i/;J%1,/IvZ2(/eg/2aZggI7IZ2g;IZZ/;;JBe,;IJ2eZ;I?/(a/gVI1I/2B(2ZiIg;2g}XB772ZeaZI/;(;g7JeI;2J((Zi/Jg}(iMJ212G1BZ2/};Dg2e}IB(7(}/a/7ieggII7e2a/JZiUi;zg(-iIxi1(i/B/(E}gBI2Ii2n77Z};a;2sZ.a;I2ZZ;iJ/ZOigIa(Ii2)(1Zi1B;(V/py(22}ZgZ1/a2ag2IZIg(I(ZI;/Ig;7;9I((2BeDZ1//;Bg(1/IQ(2(/;g/7gZg<b21Z2g}IZea;;1me6;IJg((;a%/1;/gv(1Ia2wJ2Z/Bg;;I}9B172Z(BII/}I;gIeeI;2J(e/;i5;e1isH212/(BZ1;6Jgg1Z}I7B7(ZZa/7g}7aN7ie2giJZ(/i;I)eiiIJg1(;JB/2;}g4I2;}29J7Z}7a;IgZtg27ge(g2J/;/igJP(I;(J;1Z;eB;1}/-BI22}(BJ7//Iag2aZIa1I(ZZaeJ;Z7;D21(2;;3Z(/BeBg(1/IJI2(/Zg/(;}(gq2eZ2BIIZZZ;;2gZe;II}((I1x/(//g6(}g/2,;2Z/Ig;7B}bg772Z(BiI/e;;g7<eI;2J(eZB(x;e7iOF712i;BZ2//igg17}IB}7(Z/a/2;Z7a+7(e2;}JZ}Bi;hgeZiIJ/1(/ZB/1c}gIx2(}2B;7Z!ga;efZzOII;e(agJ//Iig1}(Ig2%/1Z;rB;i//p1e22};727//7ag7eZIa1I(ei;/J;}J;+JI(2;efZ1//;Bge7/IB22(/Zg/7;Zggt11Z2a(IZZ;;;Jge%aI1k((;gk/1a/gJe1I/2VJ2Z/gg;12}+g272/(g7I/}J;gI2eIGIJ((Zia5;e1iDlI12//BZe//Zgg1e}I(Z7(Zga/1;Z(a 7}e2B;JZ}gi;7geZiIJi1(gIB/iJ}gBI2;}2Bg7ZZaa;IgZmgI()e(aBJ/(aigIZ(Ii2Ji1ZiBB;(1/4B222i(xq7//Iag72ZIJII(eZgIJ;Z(;WJI(2i/QZZ/iZBg(Z/IeZ2(^(g/(;}ggH2/Z2W;IZ}};;2gee;II;((BIU/;J/gzI1;/2NB2Z}/g;7g}bBIe8Z(B!I/ea;g7}eI;2Jg(Za^S;e(iM_212;(Bg2/i7gg22}III7(ZZaiI;}eamIIe2;/JZ}/aIkge}iIZZ1(JZB/e;i(B&1i}2J;7Z;/a;1gZ/aI7ae(oIJ/aJigJI(;i2Ij1Zi7B;2g/MrI1a}(jJ7/Zaag2/ZIa27ZeZgJJ;Ze;LJ2(2i(Je1//;Bg1>/IB22(}ZL}7;Zggu77Z2a(IZ");local n=0;o.FdajImts(function
+if game.PlaceId == 126884695634066 then
+   
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+   WindUI:SetTheme("Dark")
+   WindUI:SetNotificationLower(true)
+   WindUI:GetTransparency(true)
+   
+   -- window
+   local Window = WindUI:CreateWindow({
+    Title = "Grow A Garden | Shaz Hub",
+    Icon = "fence",
+    Author = "ItsMeShaurya",
+    Folder = "ShazHub",
+    Size = UDim2.fromOffset(580, 460),
+    Transparent = true,
+    Theme = "Dark",
+    Resizable = true,
+    SideBarWidth = 200,
+    Background = "", -- rbxassetid only
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = false,
+    User = {
+        Enabled = true,
+        Anonymous = false, 
+        Callback = function()
+            print("clicked")
+        end,
+    },
+   })       
+       
+       KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
+        Key = { "1234", "5678" },
+        Note = "Join the discord for the key",
+        Thumbnail = {
+            Image = "key",
+            Title = "Shaz Hub Key System",
+        },
+        URL = "https://discord.gg/UzVhzejduu",
+        SaveKey = true,
+    },
+})
+   
+   -- tabs
+   local FarmTab = Window:Tab({
+    Title = "Auto Farm",
+    Icon = "carrot",
+    Locked = false,
+   })
+      
+   local BuyTab = Window:Tab({
+    Title = "Auto Buy",
+    Icon = "shopping-cart",
+    Locked = false,
+   })
+   
+   local EventTab = Window:Tab({
+    Title = "Events",
+    Icon = "calendar",
+    Locked = false,
+})
+   
+   local PetTab = Window:Tab({
+    Title = "Pets",
+    Icon = "paw-print",
+    Locked = false,
+})
+
+-- dropdowns and buttons
+
+local buyEvent = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("BuySeedStock")
+
+local selectedSeeds = {"Carrot"}  -- initial dropdown selection
+local autoBuyEnabled = false       -- controls if auto-buy is running
+
+-- Dropdown to select seeds to auto-buy
+local SeedDropdown = BuyTab:Dropdown({
+    Title = "Auto Buy Seeds",
+    Values = {"Carrot", "Strawberry", "Blueberry", "Orange Tulip", "Tomato", "Corn", "Daffodil", "Watermelon", "Pumpkin", "Apple", "Bamboo", "Coconut", "Cactus", "Dragon Fruit",
+        "Mango", "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk", "Ember Lily", "Sugar Apple", "Burning Bud", "Giant Pinecone", "Elder Strawberry"
+    },
+    Value = selectedSeeds,
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option)
+        selectedSeeds = option
+        print("Selected seeds updated:", table.concat(selectedSeeds, ", "))
+    end
+})
+
+-- Toggle to enable/disable continuous auto-buy
+local SeedToggle = BuyTab:Toggle({
+    Title = "Auto Buy selected seeds",
+    Desc = "Continuously auto buys seeds while enabled",
+    Default = false,
+    Callback = function(state)
+        autoBuyEnabled = state
+        if autoBuyEnabled then
+            spawn(function()
+                while autoBuyEnabled do
+                    for _, seed in ipairs(selectedSeeds) do
+                        buyEvent:FireServer(seed)
+                        print("Auto-buying:", seed)
+                    end
+                    wait(0) -- adjust delay as needed
+                end
+            end)
+        else
+            print("Auto-buy disabled.")
+        end
+    end
+})
+    local selectedGears = {"Watering Can"}  -- initial dropdown selection
+    local autoBuyEnabled = false 
+
+local buyEvent = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("BuyGearStock")
+
+local GearDropdown = BuyTab:Dropdown({
+    Title = "Select Gears to Auto Buy",
+    Values = {
+        "Watering Can", "Trowel", "Recall Wrench", "Basic Sprinkler", "Advanced Sprinkler",
+        "Godly Sprinkler", "Master Sprinkler", "Magnifying Glass", "Tanning Mirror",
+        "Cleaning Spray", "Favorite Tool", "Harvest Tool", "Friendship Pot",
+        "Medium Toy", "Medium Treat", "Levelup Lollipop"
+    },
+    Value = selectedGears,
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option) 
+        selectedGears = option
+        print("Selected gears updated:", table.concat(selectedGears, ", "))
+    end
+})
+
+local GearToggle = BuyTab:Toggle({
+    Title = "Auto Buy Gears",
+    Desc = "Continuously auto buys gears while enabled",
+    Default = false,
+    Callback = function(state) 
+        autoBuyEnabled = state
+        if autoBuyEnabled then
+            spawn(function()
+                while autoBuyEnabled do
+                    for _, gear in ipairs(selectedGears) do
+                        buyEvent:FireServer(gear)
+                        print("Auto-buying gear:", gear)
+                    end
+                    wait(0)  -- Adjust delay as needed
+                end
+            end)
+        else
+            print("Auto-buy disabled.")
+        end
+    end
+})
+    
+    local selectedEggs = {"Common Egg"}  -- initial dropdown selection
+local autoBuyEggsEnabled = false
+
+local buyEggEvent = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("BuyPetEgg")
+
+local EggDropdown = BuyTab:Dropdown({
+    Title = "Select eggs to auto buy",
+    Values = {"Common Egg", "Common Summer Egg", "Rare Summer Egg", "Mythical Egg", "Bug Egg", "Paradise Egg", "Bee Egg"},
+    Value = selectedEggs,
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option)
+        selectedEggs = option
+        print("Selected eggs updated:", table.concat(selectedEggs, ", "))
+    end
+})
+
+local EggToggle = BuyTab:Toggle({
+    Title = "Start Auto Buying Eggs",
+    Desc = "Continuously auto buys eggs while enabled",
+    Default = false,
+    Callback = function(state)
+        autoBuyEggsEnabled = state
+        if autoBuyEggsEnabled then
+            spawn(function()
+                while autoBuyEggsEnabled do
+                    for _, egg in ipairs(selectedEggs) do
+                        buyEggEvent:FireServer(egg)
+                        print("Auto-buying egg:", egg)
+                    end
+                    wait(0)  -- increase to 1 to prevent spamming
+                end
+            end)
+        else
+            print("Auto buying disabled.")
+        end
+    end
+})
+
+-- Events 
+    local FoxButton = EventTab:Button({
+    Title = "Submit To Fox",
+    Desc = "Submits held corrupted or tranquil plant to fox",
+    Locked = false,
+    Callback = function()
+       -- This code was generated by Cobalt
+-- https://github.com/notpoiu/cobalt
+
+local Event = game:GetService("ReplicatedStorage").GameEvents.ZenQuestRemoteEvent
+Event:FireServer(
+    "SubmitToFox"
+) 
+    end
+})
+    
+    local TanukiButton = EventTab:Button({
+    Title = "Get Chi",
+    Desc = "Submits all Tranquil fruits to Tanuki",
+    Locked = false,
+    Callback = function()
+        local args = {
+	"SubmitAllPlants"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("ZenAuraRemoteEvent"):FireServer(unpack(args))
+        print("got chi")
+    end
+})
+    
+    local ZenButton = EventTab:Button({
+    Title = "Grow Zen Tree",
+    Desc = "Submits all tranquil plants to Zen Channeler",
+    Locked = false,
+    Callback = function()
+        local args = {
+	"SubmitAllPlants"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("ZenQuestRemoteEvent"):FireServer(unpack(args))
+
+        print("Submitted all Plants!")
+    end
+})
+    
+    local collectToggle = EventTab:Toggle({
+    Title = "Auto Collect Corrupted and Tranquil",
+    Desc = "Collects all Tranquil and Corrupted mutated plants in your garden",
+    Default = false,
+    Callback = function(state)
+        local runService = game:GetService("RunService")
+        local Players = game:GetService("Players")
+        local player = Players.LocalPlayer
+
+        -- assuming garden models are under workspace.Farm or similar
+        local garden = workspace:WaitForChild("Farm"):WaitForChild(player.Name)
+        local connection
+
+        if state then
+            connection = runService.Heartbeat:Connect(function()
+                for _, plant in ipairs(garden:GetChildren()) do
+                    if plant:IsA("Model") then
+                        -- your game may use 'Mutation' or 'MutatedType'
+                        local mutVal = plant:FindFirstChild("Mutation") or plant:FindFirstChild("Varient")
+                        if mutVal and (mutVal.Value == "Tranquil" or mutVal.Value == "Corrupted") then
+                            local prompt = plant:FindFirstChildWhichIsA("ProximityPrompt", true)
+                            if prompt and prompt.Enabled then
+                                fireproximityprompt(prompt)
+                            end
+                        end
+                    end
+                end
+            end)
+        else
+            if connection then
+                connection:Disconnect()
+                connection = nil
+            end
+        end
+    end
+})
+    
+end
