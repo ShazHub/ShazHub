@@ -1,0 +1,276 @@
+if game.PlaceId == 126884695634066 then
+   
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+   WindUI:SetTheme("Dark")
+   WindUI:SetNotificationLower(true)
+   WindUI:GetTransparency(true)
+   
+   -- window
+   local Window = WindUI:CreateWindow({
+    Title = "Grow A Garden | Shaz Hub",
+    Icon = "fence",
+    Author = "ItsMeShaurya",
+    Folder = "ShazHub",
+    Size = UDim2.fromOffset(580, 460),
+    Transparent = true,
+    Theme = "Dark",
+    Resizable = true,
+    SideBarWidth = 200,
+    Background = "", -- rbxassetid only
+    BackgroundImageTransparency = 0.42,
+    HideSearchBar = true,
+    ScrollBarEnabled = false,
+    User = {
+        Enabled = true,
+        Anonymous = false, 
+        Callback = function()
+            print("clicked")
+        end,
+    },
+   })       
+       
+       KeySystem = { -- <- ↓ remove this all, if you dont neet the key system
+        Key = { "1234", "5678" },
+        Note = "Join the discord for the key",
+        Thumbnail = {
+            Image = "key",
+            Title = "Shaz Hub Key System",
+        },
+        URL = "https://discord.gg/UzVhzejduu",
+        SaveKey = true,
+    },
+})
+   
+   -- tabs
+   local FarmTab = Window:Tab({
+    Title = "Auto Farm",
+    Icon = "carrot",
+    Locked = false,
+   })
+      
+   local BuyTab = Window:Tab({
+    Title = "Auto Buy",
+    Icon = "shopping-cart",
+    Locked = false,
+   })
+   
+   local EventTab = Window:Tab({
+    Title = "Events",
+    Icon = "calendar",
+    Locked = false,
+})
+   
+   local PetTab = Window:Tab({
+    Title = "Pets",
+    Icon = "paw-print",
+    Locked = false,
+})
+
+-- dropdowns and buttons
+
+local buyEvent = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("BuySeedStock")
+
+local selectedSeeds = {"Carrot"}  -- initial dropdown selection
+local autoBuyEnabled = false       -- controls if auto-buy is running
+
+-- Dropdown to select seeds to auto-buy
+local SeedDropdown = BuyTab:Dropdown({
+    Title = "Auto Buy Seeds",
+    Values = {"Carrot", "Strawberry", "Blueberry", "Orange Tulip", "Tomato", "Corn", "Daffodil", "Watermelon", "Pumpkin", "Apple", "Bamboo", "Coconut", "Cactus", "Dragon Fruit",
+        "Mango", "Grape", "Mushroom", "Pepper", "Cacao", "Beanstalk", "Ember Lily", "Sugar Apple", "Burning Bud", "Giant Pinecone", "Elder Strawberry"
+    },
+    Value = selectedSeeds,
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option)
+        selectedSeeds = option
+        print("Selected seeds updated:", table.concat(selectedSeeds, ", "))
+    end
+})
+
+-- Toggle to enable/disable continuous auto-buy
+local SeedToggle = BuyTab:Toggle({
+    Title = "Auto Buy selected seeds",
+    Desc = "Continuously auto buys seeds while enabled",
+    Default = false,
+    Callback = function(state)
+        autoBuyEnabled = state
+        if autoBuyEnabled then
+            spawn(function()
+                while autoBuyEnabled do
+                    for _, seed in ipairs(selectedSeeds) do
+                        buyEvent:FireServer(seed)
+                        print("Auto-buying:", seed)
+                    end
+                    wait(0) -- adjust delay as needed
+                end
+            end)
+        else
+            print("Auto-buy disabled.")
+        end
+    end
+})
+    local selectedGears = {"Watering Can"}  -- initial dropdown selection
+    local autoBuyEnabled = false 
+
+local buyEvent = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("BuyGearStock")
+
+local GearDropdown = BuyTab:Dropdown({
+    Title = "Select Gears to Auto Buy",
+    Values = {
+        "Watering Can", "Trowel", "Recall Wrench", "Basic Sprinkler", "Advanced Sprinkler",
+        "Godly Sprinkler", "Master Sprinkler", "Magnifying Glass", "Tanning Mirror",
+        "Cleaning Spray", "Favorite Tool", "Harvest Tool", "Friendship Pot",
+        "Medium Toy", "Medium Treat", "Levelup Lollipop"
+    },
+    Value = selectedGears,
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option) 
+        selectedGears = option
+        print("Selected gears updated:", table.concat(selectedGears, ", "))
+    end
+})
+
+local GearToggle = BuyTab:Toggle({
+    Title = "Auto Buy Gears",
+    Desc = "Continuously auto buys gears while enabled",
+    Default = false,
+    Callback = function(state) 
+        autoBuyEnabled = state
+        if autoBuyEnabled then
+            spawn(function()
+                while autoBuyEnabled do
+                    for _, gear in ipairs(selectedGears) do
+                        buyEvent:FireServer(gear)
+                        print("Auto-buying gear:", gear)
+                    end
+                    wait(0)  -- Adjust delay as needed
+                end
+            end)
+        else
+            print("Auto-buy disabled.")
+        end
+    end
+})
+    
+    local selectedEggs = {"Common Egg"}  -- initial dropdown selection
+local autoBuyEggsEnabled = false
+
+local buyEggEvent = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("BuyPetEgg")
+
+local EggDropdown = BuyTab:Dropdown({
+    Title = "Select eggs to auto buy",
+    Values = {"Common Egg", "Common Summer Egg", "Rare Summer Egg", "Mythical Egg", "Bug Egg", "Paradise Egg", "Bee Egg"},
+    Value = selectedEggs,
+    Multi = true,
+    AllowNone = true,
+    Callback = function(option)
+        selectedEggs = option
+        print("Selected eggs updated:", table.concat(selectedEggs, ", "))
+    end
+})
+
+local EggToggle = BuyTab:Toggle({
+    Title = "Start Auto Buying Eggs",
+    Desc = "Continuously auto buys eggs while enabled",
+    Default = false,
+    Callback = function(state)
+        autoBuyEggsEnabled = state
+        if autoBuyEggsEnabled then
+            spawn(function()
+                while autoBuyEggsEnabled do
+                    for _, egg in ipairs(selectedEggs) do
+                        buyEggEvent:FireServer(egg)
+                        print("Auto-buying egg:", egg)
+                    end
+                    wait(0)  -- increase to 1 to prevent spamming
+                end
+            end)
+        else
+            print("Auto buying disabled.")
+        end
+    end
+})
+
+-- Events 
+    local FoxButton = EventTab:Button({
+    Title = "Submit To Fox",
+    Desc = "Submits held corrupted or tranquil plant to fox",
+    Locked = false,
+    Callback = function()
+       -- This code was generated by Cobalt
+-- https://github.com/notpoiu/cobalt
+
+local Event = game:GetService("ReplicatedStorage").GameEvents.ZenQuestRemoteEvent
+Event:FireServer(
+    "SubmitToFox"
+) 
+    end
+})
+    
+    local TanukiButton = EventTab:Button({
+    Title = "Get Chi",
+    Desc = "Submits all Tranquil fruits to Tanuki",
+    Locked = false,
+    Callback = function()
+        local args = {
+	"SubmitAllPlants"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("ZenAuraRemoteEvent"):FireServer(unpack(args))
+        print("got chi")
+    end
+})
+    
+    local ZenButton = EventTab:Button({
+    Title = "Grow Zen Tree",
+    Desc = "Submits all tranquil plants to Zen Channeler",
+    Locked = false,
+    Callback = function()
+        local args = {
+	"SubmitAllPlants"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("ZenQuestRemoteEvent"):FireServer(unpack(args))
+
+        print("Submitted all Plants!")
+    end
+})
+    
+    local collectToggle = EventTab:Toggle({
+    Title = "Auto Collect Corrupted and Tranquil",
+    Desc = "Collects all Tranquil and Corrupted mutated plants in your garden",
+    Default = false,
+    Callback = function(state)
+        local runService = game:GetService("RunService")
+        local Players = game:GetService("Players")
+        local player = Players.LocalPlayer
+
+        -- assuming garden models are under workspace.Farm or similar
+        local garden = workspace:WaitForChild("Farm"):WaitForChild(player.Name)
+        local connection
+
+        if state then
+            connection = runService.Heartbeat:Connect(function()
+                for _, plant in ipairs(garden:GetChildren()) do
+                    if plant:IsA("Model") then
+                        -- your game may use 'Mutation' or 'MutatedType'
+                        local mutVal = plant:FindFirstChild("Mutation") or plant:FindFirstChild("Varient")
+                        if mutVal and (mutVal.Value == "Tranquil" or mutVal.Value == "Corrupted") then
+                            local prompt = plant:FindFirstChildWhichIsA("ProximityPrompt", true)
+                            if prompt and prompt.Enabled then
+                                fireproximityprompt(prompt)
+                            end
+                        end
+                    end
+                end
+            end)
+        else
+            if connection then
+                connection:Disconnect()
+                connection = nil
+            end
+        end
+    end
+})
+    
+end
