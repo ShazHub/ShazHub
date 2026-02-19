@@ -1,0 +1,83 @@
+                                                                                 local svcs={rs=game:  
+                                                                        GetService("RunService"),plrs=game:GetService(  
+                                                                    "Players"),rep=game:GetService("ReplicatedStorage"),uis=game: 
+                                                                GetService("UserInputService"),run=game:GetService("RunService")};local 
+                                                             lp=svcs.plrs.LocalPlayer;getgenv().KnoxConfig={GoingSpeed=55,ReturnSpeed=27, 
+                                                          GrabDelay=0.2,JumpHeight=4.5,HeightOffset=9,AutoPlay=false};local mt=             
+                                                        getrawmetatable(game);local oldIndex=mt.__index;local oldNewIndex=mt.__newindex;local 
+                                                       oldNamecall=mt.__namecall;setreadonly(mt,false);mt.__index=newcclosure(function(t,k) if  
+                                                    ( not checkcaller() and t:IsA("BasePart") and ((k=="Velocity") or (k==                        
+                                                  "AssemblyLinearVelocity"))) then return Vector3.new(0,0,0);end return oldIndex(t,k);end);mt.      
+                                                  __newindex=newcclosure(function(t,k,v) if ( not checkcaller() and t:IsA("BasePart") and ((k==       
+                                                "Velocity") or (k=="AssemblyLinearVelocity"))) then return;end return oldNewIndex(t,k,v);end);mt.       
+                                                __namecall=newcclosure(function(self,...) local method=getnamecallmethod();if ((method=="Kick") or (      
+                                              method=="kick")) then return;end if ((self==lp) and ((method=="Destroy") or (method=="destroy"))) then return 
+                                              ;end return oldNamecall(self,...);end);setreadonly(mt,true);if game.CoreGui:FindFirstChild("KnoxAutoDuels")   
+                                            then game.CoreGui.KnoxAutoDuels:Destroy();end local screenGui=Instance.new("ScreenGui",game.CoreGui);screenGui.   
+                                            Name="KnoxAutoDuels";local mainFrame=Instance.new("Frame",screenGui);mainFrame.Size=UDim2.new(0,130,0,90);mainFrame 
+                                          .Position=UDim2.new(0.5, -65,0.5, -45);mainFrame.BackgroundColor3=Color3.fromRGB(10,0,0);mainFrame.BorderSizePixel=0;   
+                                          mainFrame.Active=true;Instance.new("UICorner",mainFrame).CornerRadius=UDim.new(0,4);local stroke=Instance.new("UIStroke", 
+                                          mainFrame);stroke.Color=Color3.fromRGB(200,0,0);stroke.Thickness=1.2;local title=Instance.new("TextLabel",mainFrame);title. 
+                                          Size=UDim2.new(1,0,0,20);title.Text="Knox beta";title.TextColor3=Color3.fromRGB(255,0,0);title.BackgroundTransparency=1;    
+                                        title.TextSize=12;title.Font=Enum.Font.Code;local toggleBtn=Instance.new("TextButton",mainFrame);toggleBtn.Size=UDim2.new(0.85, 
+                                        0,0,25);toggleBtn.Position=UDim2.new(0.075,0,0.3,0);toggleBtn.Text=   --[[==============================]]"AUTO PLAY";toggleBtn.  
+                                        BackgroundColor3=Color3.fromRGB(25,0,0);toggleBtn.          --[[============================================]]TextColor3=Color3.  
+                                        fromRGB(120,0,0);toggleBtn.Font=Enum.Font.Code;         --[[======================================================]]toggleBtn.      
+                                      TextSize=11;Instance.new("UICorner",toggleBtn).       --[[==========================================================]]CornerRadius=UDim 
+                                      .new(0,3);local statusLabel=Instance.new(           --[[==============================================================]]"TextLabel",    
+                                      mainFrame);statusLabel.Size=UDim2.new(1,0,0,25);    --[[================================================================]]statusLabel.    
+                                      Position=UDim2.new(0,0,0.65,0);statusLabel.Text=    --[[==================================================================]]"STBY";       
+                                      statusLabel.TextColor3=Color3.fromRGB(255,255,255); --[[==================================================================]]statusLabel.      
+                                    BackgroundTransparency=1;statusLabel.TextSize=16;     --[[====================================================================]]statusLabel.  
+                    Font=Enum.Font.Code;local BarContainer=Instance.new("Frame",screenGui --[[====================================================================]]);BarContainer. 
+              Size=UDim2.new(0,300,0,12);BarContainer.Position=UDim2.new(0.5, -150,1, -   --[[======================================================================]]145);         
+            BarContainer.BackgroundColor3=Color3.fromRGB(15,15,15);BarContainer.Visible=  --[[======================================================================]]false;local   
+          ProgressBar=Instance.new("Frame",BarContainer);ProgressBar.Size=UDim2.new(0,0,1 --[[======================================================================]],0);          
+        ProgressBar.BackgroundColor3=Color3.fromRGB(180,0,0);Instance.new("UIStroke",     --[[======================================================================]]BarContainer) 
+        .Color=Color3.fromRGB(180,0,0);local dragging,dragStart,startPos;local function   --[[======================================================================]]beginDrag(    
+      input) if (input.UserInputType==Enum.UserInputType.MouseButton1) then dragging=true --[[======================================================================]];dragStart=   
+      input.Position;startPos=mainFrame.Position;end end title.InputBegan:Connect(beginDrag --[[==================================================================]]);mainFrame.    
+      InputBegan:Connect(beginDrag);svcs.uis.InputChanged:Connect(function(input) if (      --[[================================================================]]dragging and (    
+    input.UserInputType==Enum.UserInputType.MouseMovement)) then local delta=input.Position --[[==============================================================]]-dragStart ;      
+    mainFrame.Position=UDim2.new(startPos.X.Scale,startPos.X.Offset + delta.X ,startPos.Y.    --[[==========================================================]]Scale,startPos.Y.   
+    Offset + delta.Y );end end);svcs.uis.InputEnded:Connect(function(input) if (input.          --[[====================================================]]UserInputType==Enum.    
+    UserInputType.MouseButton1) then dragging=false;end end);local function removeAnimations(char --[[==============================================]]) if char then local      
+    animate=char:FindFirstChild("Animate");if animate then animate:Destroy();end end end if lp.       --[[====================================]]Character then                
+    removeAnimations(lp.Character);end lp.CharacterAdded:Connect(removeAnimations);local function         --[[========================]]applyGod(char) local h=char and char: 
+    FindFirstChildOfClass("Humanoid") ;if h then h.BreakJointsOnDeath=false;h:SetStateEnabled(Enum.HumanoidStateType.Dead,false);h.MaxHealth=100;h.Health=100;h.JumpPower=  
+  getgenv().KnoxConfig.JumpHeight * 10 ;end end svcs.rs.Heartbeat:Connect(function() if lp.Character then local hum=lp.Character:FindFirstChildOfClass("Humanoid");if (   
+  hum and (hum.Health<95)) then hum.Health=100;end end end);lp.CharacterAdded:Connect(function(c) task.wait(0.5);applyGod(c);end);if lp.Character then applyGod(lp.     
+  Character);end local function applyChams(p) if (p==lp) then return;end local function set(c) if  not c then return;end local h=Instance.new("Highlight",c);h.FillColor= 
+  Color3.new(1,0,0);h.OutlineColor=Color3.new(1,1,1);end p.CharacterAdded:Connect(set);if p.Character then set(p.Character);end end for _,v in pairs(svcs.plrs:GetPlayers 
+  ()) do applyChams(v);end svcs.plrs.PlayerAdded:Connect(applyChams);local LEFT_PATH={Vector3.new( -473, -7,113),Vector3.new( -475, -7,90),Vector3.new( -475, -7,25),     
+  Vector3.new( -487, -5,25)};local RIGHT_PATH={Vector3.new( -472, -7,26),Vector3.new( -473, -7,92),Vector3.new( -477, -7,93),Vector3.new( -486, -5,98)};local function    
+  isRagdolled() local h=lp.Character and lp.Character:FindFirstChildOfClass("Humanoid") ;if  not h then return false;end local s=h:GetState();return (s==Enum.            
+  HumanoidStateType.Ragdoll) or (s==Enum.HumanoidStateType.FallingDown) or (s==Enum.HumanoidStateType.Physics) or h.PlatformStand ;end local function getNearestNodeIndex 
+  (path) local hrp=lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") ;if  not hrp then return 1;end local idx,minD=1,math.huge;for i,pos in ipairs(path)   
+  do local d=(pos-hrp.Position).Magnitude;if (d<minD) then minD=d;idx=i;end end return idx;end svcs.run.Stepped:Connect(function() if (getgenv().KnoxConfig.AutoPlay and  
+  lp.Character) then local root=lp.Character:FindFirstChild("HumanoidRootPart");if root then root.Velocity=Vector3.new(0,0,0);for _,v in pairs(lp.Character:GetChildren() 
+  ) do if v:IsA("BasePart") then v.CanCollide=false;end end end end end);local HOLD_DURATION=0.2;local isGrabbing=false;local function patchPrompt(obj) if (obj:IsA(        
+  "ProximityPrompt") and obj.ActionText:find("Steal")) then obj.MaxActivationDistance=999999;obj.RequiresLineOfSight=false;obj.Style=Enum.ProximityPromptStyle.Custom;end   
+  end for _,v in workspace:GetDescendants() do patchPrompt(v);end workspace.DescendantAdded:Connect(patchPrompt);local function getAbsoluteNearest() local hrp=lp.Character 
+   and lp.Character:FindFirstChild("HumanoidRootPart") ;if  not hrp then return nil;end local best,dist=nil,math.huge;for _,v in workspace:GetDescendants() do if (v:IsA(   
+  "ProximityPrompt") and v.ActionText:find("Steal") and v.Enabled) then local pos=(v.Parent:IsA("BasePart") and v.Parent.Position) or (v.Parent:IsA("Attachment") and v.    
+  Parent.WorldPosition) ;if pos then local d=(pos-hrp.Position).Magnitude;if (d<dist) then dist=d;best=v;end end end end return best;end local function preciseMove(target, 
+  speed,offsetOverride) local char=lp.Character;if  not char then return;end local offset=offsetOverride or getgenv().KnoxConfig.HeightOffset ;local fixedY=target.Y +      
+  offset ;local targetPos=Vector3.new(target.X,fixedY,target.Z);while getgenv().KnoxConfig.AutoPlay do svcs.rs.Heartbeat:Wait();if isRagdolled() then break;end local cur=  
+  char:GetPivot().Position;local dist2D=(Vector2.new(cur.X,cur.Z) -Vector2.new(targetPos.X,targetPos.Z)).Magnitude;if (dist2D<1.1) then break;end local dir=(Vector3.new(   
+  targetPos.X,0,targetPos.Z) -Vector3.new(cur.X,0,cur.Z)).Unit;local nextPos=cur + (dir * (speed/60)) ;char:PivotTo(CFrame.new(Vector3.new(nextPos.X,fixedY,nextPos.Z),     
+  targetPos));end end local function instantSteal() if isGrabbing then return;end isGrabbing=true;BarContainer.Visible=true;local target=getAbsoluteNearest();if target     
+  then pcall(function() target:InputHoldBegin();end);local start=tick();while isGrabbing and ((tick() -start)<HOLD_DURATION)  do local progress=(tick() -start)/            
+  HOLD_DURATION ;ProgressBar.Size=UDim2.new(math.clamp(progress,0,1),0,1,0);svcs.rs.Heartbeat:Wait();end pcall(function() target:InputHoldEnd();end);if fireproximityprompt 
+   then fireproximityprompt(target);end end task.wait(0.1);BarContainer.Visible=false;ProgressBar.Size=UDim2.new(0,0,1,0);isGrabbing=false;end local function startLoop() 
+   while getgenv().KnoxConfig.AutoPlay do local char=lp.Character or lp.CharacterAdded:Wait() ;local root=char:WaitForChild("HumanoidRootPart");applyGod(char);if char:   
+  FindFirstChildOfClass("Humanoid") then char.Humanoid:ChangeState(Enum.HumanoidStateType.GettingUp);end local useRight=(root.Position-RIGHT_PATH[1]).Magnitude<(root.    
+    Position-LEFT_PATH[1]).Magnitude ;local path=(useRight and RIGHT_PATH) or LEFT_PATH ;for i=getNearestNodeIndex(path), #path do if  not getgenv().KnoxConfig.AutoPlay  
+    then break;end statusLabel.Text="P:"   .. i ;preciseMove(path[i],getgenv().KnoxConfig.GoingSpeed);end if getgenv().KnoxConfig.AutoPlay then statusLabel.Text="STEAL!" 
+    ;instantSteal();end for i=getNearestNodeIndex(path) -1 ,1, -1 do if  not getgenv().KnoxConfig.AutoPlay then break;end statusLabel.Text="R:"   .. i ;preciseMove(path[ 
+    i],getgenv().KnoxConfig.ReturnSpeed);local pushRoot=lp.Character and lp.Character:FindFirstChild("HumanoidRootPart") ;if pushRoot then for push=1,4 do pushRoot.      
+      CFrame=pushRoot.CFrame + (pushRoot.CFrame.LookVector * 7.5) ;task.wait(0.008);end end end if getgenv().KnoxConfig.AutoPlay then local basePos=path[1];preciseMove 
+      (basePos,getgenv().KnoxConfig.ReturnSpeed,0);end task.wait(0.05);end end toggleBtn.MouseButton1Click:Connect(function() getgenv().KnoxConfig.AutoPlay= not        
+      getgenv().KnoxConfig.AutoPlay;if getgenv().KnoxConfig.AutoPlay then toggleBtn.TextColor3=Color3.fromRGB(255,0,0);toggleBtn.BackgroundColor3=Color3.fromRGB(50,0,0 
+        );statusLabel.Text="RUNNING";task.spawn(startLoop);else toggleBtn.TextColor3=Color3.fromRGB(120,0,0);toggleBtn.BackgroundColor3=Color3.fromRGB(25,0,0);         
+        statusLabel.Text="STBY";BarContainer.Visible=false;end end);statusLabel.Text="LOADED âœ“";
