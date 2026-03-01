@@ -125,7 +125,7 @@ end
 
 task.spawn(function()
     while true do
-        if patrolMode \~= "none" then
+        if patrolMode ~= "none" then
             local prompt = findNearestStealPrompt()
             if prompt then triggerPrompt(prompt) end
         end
@@ -141,7 +141,7 @@ local function updateWalking()
     local hum = char:FindFirstChild("Humanoid")
     if not root or not hum then return end
 
-    if patrolMode \~= "none" then
+    if patrolMode ~= "none" then
         local waypoints = getCurrentWaypoints()
         local targetPos = waypoints[currentWaypoint]
         local currentPos = root.Position
@@ -220,7 +220,7 @@ local function updateSpeed()
 
     local target = 58
     if State.Stealing then target = 28 end
-    if patrolMode \~= "none" then target = displayedSpeed end
+    if patrolMode ~= "none" then target = displayedSpeed end
 
     local move = hum.MoveDirection
     if move.Magnitude < 0.02 and patrolMode == "none" then return end
@@ -335,7 +335,7 @@ local function CreateSpeedCounter(char)
 
     RunService.RenderStepped:Connect(function()
         if not char or not char.Parent then return end
-        if patrolMode \~= "none" then
+        if patrolMode ~= "none" then
             label.Text = "Speed: " .. string.format("%.1f", displayedSpeed)
         else
             local hum = char:FindFirstChildOfClass("Humanoid")
