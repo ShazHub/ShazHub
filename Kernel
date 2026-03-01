@@ -1,20 +1,4 @@
--- Kernel.lua
---[[
-    KERNEL ULTIMATE MASTER SCRIPT - FULLY FIXED & REFINED
-    - All missing functions added (stopAllAnimationTracks, removeHumanoidAnimations)
-    - Syntax fixed (\~= instead of \\~=)
-    - Refined modern GUI layout
-    - Speed counter works perfectly during Auto Play
-    - Auto Play Left/Right with your exact waypoints + 0.5s delay before return
-    - Auto Steal inbuilt (runs automatically during patrol)
-    - Base XRay toggle (your exact function)
-    - Your exact Optimizer
-    - Kick bypass (hides BAC-10366 screen)
-    - Real smooth 58 default speed
-    - No resets, stable execution
-]]
-
-task.wait(1)
+repeat task.wait() until game:IsLoaded()
 
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -222,17 +206,6 @@ local function disableBaseTransparency()
     end
     originalTransparency = {}
 end
-
--- KICK BYPASS
-local function kickBypass()
-    Player.PlayerGui.DescendantAdded:Connect(function(d)
-        if d:IsA("TextLabel") and d.Text:find("BAC-10366") then
-            local frame = d.Parent.Parent
-            if frame then frame:Destroy() end
-        end
-    end)
-end
-kickBypass()
 
 -- SMOOTH SPEED
 local SPEED_SMOOTH_FACTOR = 0.28
@@ -716,3 +689,4 @@ print("KERNEL.LUA - REFINED & FULLY FIXED")
 end)
 
 print("KERNEL.LUA INITIALIZED - GUI APPEARING")
+  
