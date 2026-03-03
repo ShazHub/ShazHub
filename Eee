@@ -1,0 +1,414 @@
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+
+-- Variables
+local localPlayer = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local gui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local espToggle = Instance.new("TextButton")
+local aimbotToggle = Instance.new("TextButton")
+local guiToggle = Instance.new("TextButton")
+local performanceToggle = Instance.new("TextButton")
+local autoShootToggle = Instance.new("TextButton")
+local espEnabled = false
+local aimbotEnabled = false
+local guiVisible = true
+local performanceEnabled = false
+local autoShootEnabled = false
+
+-- ESP Settings
+local espRange = 200
+local espColor = Color3.new(1, 0, 0)
+
+-- Aimbot Settings
+local aimbotRange = 200
+
+-- Performance Settings
+local originalLightingSettings = {
+    Ambient = Lighting.Ambient,
+    Brightness = Lighting.Brightness,
+    ColorShift_Bottom = Lighting.ColorShift_Bottom,
+    ColorShift_Top = Lighting.ColorShift_Top,
+    FogColor = Lighting.FogColor,
+    FogEnd = Lighting.FogEnd,
+    FogStart = Lighting.FogStart,
+    GlobalShadows = Lighting.GlobalShadows,
+    OutdoorAmbient = Lighting.OutdoorAmbient,
+    TimeOfDay = Lighting.ClockTime
+}
+
+-- Create GUI
+gui.Name = "ESP_Aimbot_GUI"
+gui.Parent = game:GetService("CoreGui")
+
+frame.Size = UDim2.new(0, 200, 0, 250)
+frame.Position = UDim2.new(0, 10, 0, 10)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+
+espToggle.Size = UDim2.new(0, 180, 0, 40)
+espToggle.Position = UDim2.new(0, 10, 0, 10)
+espToggle.Text = "ESP: Off"
+espToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+espToggle.BorderSizePixel = 0
+espToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+espToggle.Font = Enum.Font.SourceSans
+espToggle.TextSize = 20
+espToggle.Parent = frame
+
+aimbotToggle.Size = UDim2.new(0, 180, 0, 40)
+aimbotToggle.Position = UDim2.new(0, 10, 0, 60)
+aimbotToggle.Text = "Aimbot: Off"
+aimbotToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+aimbotToggle.BorderSizePixel = 0
+aimbotToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+aimbotToggle.Font = Enum.Font.SourceSans
+aimbotToggle.TextSize = 20
+aimbotToggle.Parent = frame
+
+guiToggle.Size = UDim2.new(0, 180, 0, 40)
+guiToggle.Position = UDim2.new(0, 10, 0, 110)
+guiToggle.Text = "Hide GUI"
+guiToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+guiToggle.BorderSizePixel = 0
+guiToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+guiToggle.Font = Enum.Font.SourceSans
+guiToggle.TextSize = 20
+guiToggle.Parent = frame
+
+performanceToggle.Size = UDim2.new(0, 180, 0, 40)
+performanceToggle.Position = UDim2.new(0, 10, 0, 160)
+performanceToggle.Text = "Performance: Off"
+performanceToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+performanceToggle.BorderSizePixel = 0
+performanceToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+performanceToggle.Font = Enum.Font.SourceSans
+performanceToggle.TextSize = 20
+performanceToggle.Parent = frame
+
+autoShootToggle.Size = UDim2.new(0, 180, 0, 40)
+autoShootToggle.Position = UDim2.new(0, 10, 0, 210)
+autoShootToggle.Text = "Auto Shoot: Off"
+autoShootToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+autoShootToggle.BorderSizePixel = 0
+autoShootToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+autoShootToggle.Font = Enum.Font.SourceSans
+autoShootToggle.TextSize = 20
+autoShootToggle.Parent = frame
+
+-- ESP Function
+local espPlayers = {}
+local function createESP(player)
+    local character = player.Character
+    if not character then return end
+
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then return end
+
+    local box = Drawing.new("Square")
+    box.Thickness = 2
+    box.Color = espColor
+    box.Filled = false
+    box.Visible = false
+
+    local healthBar = Drawing.new("Square")
+    healthBar.Thickness = 2
+    healthBar.Color = Color3.new(0, 1, 0)
+    healthBar.Filled = true
+    healthBar.Visible = false
+
+    local username = Drawing.new("Text")
+    username.Thickness = 2
+    username.Color = Color3.new(1, 1, 1)
+    username.Size = 18
+    username.Center = true
+    username.Visible = false
+
+    local tracer = Drawing.new("Line")
+    tracer.Thickness = 2
+    tracer.Color = espColor
+    tracer.Visible = false
+
+    local skeleton = {}
+    for _, part in pairs(character:GetChildren()) do
+        if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+            local line = Drawing.new("Line")
+            line.Thickness = 2
+            line.Color = espColor
+            line.Visible = false
+            table.insert(skeleton, line)
+        end
+    end
+
+    local function updateESP()
+        if not character or not humanoidRootPart or not humanoidRootPart.Parent then
+            box:Remove()
+            healthBar:Remove()
+            username:Remove()
+            tracer:Remove()
+            for _, line in pairs(skeleton) do
+                line:Remove()
+            end
+            return
+        end
+
+        local vector, onScreen = camera:WorldToViewportPoint(humanoidRootPart.Position)
+        if onScreen then
+            box.Size = Vector2.new(2000 / vector.Z, 2000 / vector.Z)
+            box.Position = Vector2.new(vector.X - box.Size.X / 2, vector.Y - box.Size.Y / 2)
+            box.Visible = true
+
+            healthBar.Size = Vector2.new(box.Size.X * (character.Humanoid.Health / character.Humanoid.MaxHealth), 5)
+            healthBar.Position = Vector2.new(vector.X - box.Size.X / 2, vector.Y - box.Size.Y - 5)
+            healthBar.Visible = true
+
+            username.Text = player.Name
+            username.Position = Vector2.new(vector.X - username.TextBounds.X / 2, vector.Y - box.Size.Y - 20)
+            username.Visible = true
+
+            tracer.From = Vector2.new(camera.ViewportSize.X / 2, camera.ViewportSize.Y)
+            tracer.To = Vector2.new(vector.X, vector.Y)
+            tracer.Visible = true
+
+            for _, line in pairs(skeleton) do
+                local part = character:FindFirstChild(line.Name)
+                if part then
+                    local partVector, partOnScreen = camera:WorldToViewportPoint(part.Position)
+                    if partOnScreen then
+                        line.From = Vector2.new(vector.X, vector.Y)
+                        line.To = Vector2.new(partVector.X, partVector.Y)
+                        line.Visible = true
+                    else
+                        line.Visible = false
+                    end
+                else
+                    line:Remove()
+                end
+            end
+        else
+            box.Visible = false
+            healthBar.Visible = false
+            username.Visible = false
+            tracer.Visible = false
+            for _, line in pairs(skeleton) do
+                line.Visible = false
+            end
+        end
+    end
+
+    espPlayers[player] = {
+        box = box,
+        healthBar = healthBar,
+        username = username,
+        tracer = tracer,
+        skeleton = skeleton,
+        updateESP = updateESP
+    }
+
+    RunService.RenderStepped:Connect(function()
+        if espEnabled then
+            updateESP()
+        end
+    end)
+end
+
+-- Update ESP every 5 seconds
+local function updateESPPlayers()
+    if espEnabled then
+        for player, espData in pairs(espPlayers) do
+            espData.updateESP()
+        end
+    end
+end
+
+RunService.Heartbeat:Connect(function()
+    updateESPPlayers()
+end)
+
+-- Aimbot Function
+local function aimAtPlayer(player)
+    local character = player.Character
+    if not character then return end
+
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then return end
+
+    local head = character:FindFirstChild("Head")
+    if not head then return end
+
+    local targetPosition = head.Position
+    local localPosition = localPlayer.Character.HumanoidRootPart.Position
+    local direction = (targetPosition - localPosition).unit
+    direction = Vector3.new(direction.X, 0, direction.Z) -- Only move horizontally
+
+    localPlayer.Character:SetPrimaryPartCFrame(CFrame.new(localPosition, localPosition + direction))
+end
+
+-- Auto Shoot Function
+local function autoShoot(player)
+    local character = player.Character
+    if not character then return end
+
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    if not humanoidRootPart then return end
+
+    local head = character:FindFirstChild("Head")
+    if not head then return end
+
+    local ray = Ray.new(localPlayer.Character.HumanoidRootPart.Position, (head.Position - localPlayer.Character.HumanoidRootPart.Position).unit * 1000)
+    local hit, position = Workspace:FindPartOnRay(ray, localPlayer.Character)
+
+    if hit and hit.Parent == character then
+        local mouse = localPlayer:GetMouse()
+        mouse.Button1Down:Connect(function()
+            if autoShootEnabled then
+                mouse.Button1Down:Connect(function()
+                    localPlayer.Character.Humanoid:MoveTo(head.Position)
+                end)
+            end
+        end)
+    end
+end
+
+-- Toggle ESP
+espToggle.MouseButton1Click:Connect(function()
+    espEnabled = not espEnabled
+    espToggle.Text = "ESP: " .. (espEnabled and "On" or "Off")
+
+    for _, player in pairs(Players:GetPlayers()) do
+        if player ~= localPlayer then
+            createESP(player)
+        end
+    end
+
+    Players.PlayerAdded:Connect(function(player)
+        if player ~= localPlayer then
+            createESP(player)
+        end
+    end)
+end)
+
+-- Toggle Aimbot
+aimbotToggle.MouseButton1Click:Connect(function()
+    aimbotEnabled = not aimbotEnabled
+    aimbotToggle.Text = "Aimbot: " .. (aimbotEnabled and "On" or "Off")
+end)
+
+-- Toggle GUI Visibility
+guiToggle.MouseButton1Click:Connect(function()
+    guiVisible = not guiVisible
+    gui.Enabled = guiVisible
+    guiToggle.Text = guiVisible and "Hide GUI" or "Show GUI"
+end)
+
+-- Toggle Performance
+performanceToggle.MouseButton1Click:Connect(function()
+    performanceEnabled = not performanceEnabled
+    performanceToggle.Text = "Performance: " .. (performanceEnabled and "On" or "Off")
+
+    if performanceEnabled then
+        Lighting.Ambient = Color3.new(0, 0, 0)
+        Lighting.Brightness = 0
+        Lighting.ColorShift_Bottom = Color3.new(0, 0, 0)
+        Lighting.ColorShift_Top = Color3.new(0, 0, 0)
+        Lighting.FogColor = Color3.new(0, 0, 0)
+        Lighting.FogEnd = 10000
+        Lighting.FogStart = 0
+        Lighting.GlobalShadows = false
+        Lighting.OutdoorAmbient = Color3.new(0, 0, 0)
+        Lighting.ClockTime = 12
+
+        for _, v in pairs(Workspace:GetDescendants()) do
+            if v:IsA("ParticleEmitter") then
+                v.Enabled = false
+            elseif v:IsA("BasePart") then
+                v.Material = Enum.Material.Plastic
+            elseif v:IsA("Decal") then
+                v:Destroy()
+            elseif v:IsA("MeshPart") then
+                v.MeshId = ""
+            end
+        end
+
+        settings().Rendering.QualityLevel = 1
+        settings().Rendering.ShadowQuality = 0
+        settings().Rendering.MeshQuality = 0
+        settings().Rendering.TextureQuality = 0
+        settings().Rendering.EffectsQuality = 0
+        settings().Rendering.VertexLighting = false
+    else
+        Lighting.Ambient = originalLightingSettings.Ambient
+        Lighting.Brightness = originalLightingSettings.Brightness
+        Lighting.ColorShift_Bottom = originalLightingSettings.ColorShift_Bottom
+        Lighting.ColorShift_Top = originalLightingSettings.ColorShift_Top
+        Lighting.FogColor = originalLightingSettings.FogColor
+        Lighting.FogEnd = originalLightingSettings.FogEnd
+        Lighting.FogStart = originalLightingSettings.FogStart
+        Lighting.GlobalShadows = originalLightingSettings.GlobalShadows
+        Lighting.OutdoorAmbient = originalLightingSettings.OutdoorAmbient
+        Lighting.ClockTime = originalLightingSettings.TimeOfDay
+
+        for _, v in pairs(Workspace:GetDescendants()) do
+            if v:IsA("ParticleEmitter") then
+                v.Enabled = true
+            elseif v:IsA("BasePart") then
+                v.Material = Enum.Material.SmoothPlastic
+            elseif v:IsA("Decal") then
+                v:Destroy()
+            elseif v:IsA("MeshPart") then
+                v.MeshId = ""
+            end
+        end
+
+        settings().Rendering.QualityLevel = 5
+        settings().Rendering.ShadowQuality = 3
+        settings().Rendering.MeshQuality = 3
+        settings().Rendering.TextureQuality = 3
+        settings().Rendering.EffectsQuality = 3
+        settings().Rendering.VertexLighting = true
+    end
+end)
+
+-- Toggle Auto Shoot
+autoShootToggle.MouseButton1Click:Connect(function()
+    autoShootEnabled = not autoShootEnabled
+    autoShootToggle.Text = "Auto Shoot: " .. (autoShootEnabled and "On" or "Off")
+end)
+
+-- Aimbot Logic
+RunService.RenderStepped:Connect(function()
+    if aimbotEnabled then
+        local closestPlayer = nil
+        local shortestDistance = math.huge
+
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= localPlayer then
+                local character = player.Character
+                if character then
+                    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+                    if humanoidRootPart then
+                        local distance = (humanoidRootPart.Position - localPlayer.Character.HumanoidRootPart.Position).magnitude
+                        if distance < shortestDistance and distance <= aimbotRange then
+                            closestPlayer = player
+                            shortestDistance = distance
+                        end
+                    end
+                end
+            end
+        end
+
+        if closestPlayer then
+            aimAtPlayer(closestPlayer)
+            if autoShootEnabled then
+                autoShoot(closestPlayer)
+            end
+        end
+    end
+end)
