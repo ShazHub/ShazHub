@@ -1,0 +1,346 @@
+﻿-- Roblox ESP + Aimbot GUI Script
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Camera = workspace.CurrentCamera
+
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
+-- Configuration
+local Config = {
+    ESP_Range = 200,
+    AimbotEnabled = false,
+    ESPEnabled = false,
+    GUIMinimized = false,
+}
+
+-- ESP Storage
+local ESPObjects = {}
+
+-- Create Main GUI
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ESPAimbotGUI"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+
+-- Main Frame
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0, 300, 0, 250)
+MainFrame.Position = UDim2.new(0, 20, 0, 20)
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 100, 255)
+MainFrame.BorderSizePixel = 2
+MainFrame.Parent = ScreenGui
+
+-- Title Bar
+local TitleBar = Instance.new("TextLabel")
+TitleBar.Name = "TitleBar"
+TitleBar.Size = UDim2.new(1, 0, 0, 35)
+TitleBar.BackgroundColor3 = Color3.fromRGB(0, 100, 255)
+TitleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleBar.TextSize = 16
+TitleBar.Font = Enum.Font.GothamBold
+TitleBar.Text = "ESP + Aimbot"
+TitleBar.Parent = MainFrame
+
+-- Minimize Button
+local MinimizeButton = Instance.new("TextButton")
+MinimizeButton.Name = "MinimizeButton"
+MinimizeButton.Size = UDim2.new(0, 30, 0, 30)
+MinimizeButton.Position = UDim2.new(1, -35, 0, 2.5)
+MinimizeButton.BackgroundColor3 = Color3.fromRGB(0, 80, 200)
+MinimizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+MinimizeButton.TextSize = 18
+MinimizeButton.Font = Enum.Font.GothamBold
+MinimizeButton.Text = "-"
+MinimizeButton.Parent = TitleBar
+
+-- Content Frame
+local ContentFrame = Instance.new("Frame")
+ContentFrame.Name = "ContentFrame"
+ContentFrame.Size = UDim2.new(1, 0, 1, -35)
+ContentFrame.Position = UDim2.new(0, 0, 0, 35)
+ContentFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ContentFrame.BorderSizePixel = 0
+ContentFrame.Parent = MainFrame
+
+-- ESP Toggle Label
+local ESPLabel = Instance.new("TextLabel")
+ESPLabel.Name = "ESPLabel"
+ESPLabel.Size = UDim2.new(0, 200, 0, 30)
+ESPLabel.Position = UDim2.new(0, 10, 0, 15)
+ESPLabel.BackgroundTransparency = 1
+ESPLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESPLabel.TextSize = 14
+ESPLabel.Font = Enum.Font.Gotham
+ESPLabel.Text = "ESP:"
+ESPLabel.TextXAlignment = Enum.TextXAlignment.Left
+ESPLabel.Parent = ContentFrame
+
+-- ESP Toggle Button
+local ESPToggle = Instance.new("TextButton")
+ESPToggle.Name = "ESPToggle"
+ESPToggle.Size = UDim2.new(0, 50, 0, 25)
+ESPToggle.Position = UDim2.new(0, 230, 0, 18)
+ESPToggle.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+ESPToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESPToggle.TextSize = 12
+ESPToggle.Font = Enum.Font.Gotham
+ESPToggle.Text = "OFF"
+ESPToggle.Parent = ContentFrame
+
+-- Aimbot Toggle Label
+local AimbotLabel = Instance.new("TextLabel")
+AimbotLabel.Name = "AimbotLabel"
+AimbotLabel.Size = UDim2.new(0, 200, 0, 30)
+AimbotLabel.Position = UDim2.new(0, 10, 0, 55)
+AimbotLabel.BackgroundTransparency = 1
+AimbotLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimbotLabel.TextSize = 14
+AimbotLabel.Font = Enum.Font.Gotham
+AimbotLabel.Text = "Aimbot:"
+AimbotLabel.TextXAlignment = Enum.TextXAlignment.Left
+AimbotLabel.Parent = ContentFrame
+
+-- Aimbot Toggle Button
+local AimbotToggle = Instance.new("TextButton")
+AimbotToggle.Name = "AimbotToggle"
+AimbotToggle.Size = UDim2.new(0, 50, 0, 25)
+AimbotToggle.Position = UDim2.new(0, 230, 0, 58)
+AimbotToggle.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+AimbotToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimbotToggle.TextSize = 12
+AimbotToggle.Font = Enum.Font.Gotham
+AimbotToggle.Text = "OFF"
+AimbotToggle.Parent = ContentFrame
+
+-- Status Label
+local StatusLabel = Instance.new("TextLabel")
+StatusLabel.Name = "StatusLabel"
+StatusLabel.Size = UDim2.new(1, -20, 0, 80)
+StatusLabel.Position = UDim2.new(0, 10, 0, 100)
+StatusLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+StatusLabel.TextColor3 = Color3.fromRGB(100, 255, 100)
+StatusLabel.TextSize = 12
+StatusLabel.Font = Enum.Font.Gotham
+StatusLabel.Text = "Status:\nESP: OFF\nAimbot: OFF\nPlayers Found: 0"
+StatusLabel.TextXAlignment = Enum.TextXAlignment.Left
+StatusLabel.TextYAlignment = Enum.TextYAlignment.Top
+StatusLabel.TextWrapped = true
+StatusLabel.Parent = ContentFrame
+
+-- Function to create ESP for a player
+local function CreateESP(Player)
+    if Player == LocalPlayer or ESPObjects[Player] then return end
+    
+    local ESPFolder = Instance.new("Folder")
+    ESPFolder.Name = Player.Name .. "_ESP"
+    ESPFolder.Parent = workspace
+    
+    local espData = {
+        Player = Player,
+        Folder = ESPFolder,
+        BoxFrame = nil,
+        SkeletonParts = {},
+        HealthBar = nil,
+        UsernameLabel = nil,
+    }
+    
+    -- Create Box
+    local BoxFrame = Instance.new("Frame")
+    BoxFrame.Name = "Box"
+    BoxFrame.BorderColor3 = Color3.fromRGB(0, 255, 0)
+    BoxFrame.BorderSizePixel = 2
+    BoxFrame.BackgroundTransparency = 1
+    BoxFrame.Parent = ScreenGui
+    espData.BoxFrame = BoxFrame
+    
+    -- Create Username Label
+    local UsernameLabel = Instance.new("TextLabel")
+    UsernameLabel.Name = "Username"
+    UsernameLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    UsernameLabel.BackgroundTransparency = 0.5
+    UsernameLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    UsernameLabel.TextSize = 12
+    UsernameLabel.Font = Enum.Font.GothamBold
+    UsernameLabel.Text = Player.Name
+    UsernameLabel.Parent = ScreenGui
+    espData.UsernameLabel = UsernameLabel
+    
+    -- Create Health Bar
+    local HealthBarBackground = Instance.new("Frame")
+    HealthBarBackground.Name = "HealthBarBG"
+    HealthBarBackground.BorderColor3 = Color3.fromRGB(255, 255, 255)
+    HealthBarBackground.BorderSizePixel = 1
+    HealthBarBackground.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    HealthBarBackground.Parent = ScreenGui
+    
+    local HealthBar = Instance.new("Frame")
+    HealthBar.Name = "HealthBar"
+    HealthBar.BorderSizePixel = 0
+    HealthBar.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+    HealthBar.Parent = HealthBarBackground
+    
+    espData.HealthBar = {Background = HealthBarBackground, Bar = HealthBar}
+    
+    -- Create Skeleton
+    local skeletonBones = {
+        {"Head", "Torso"},
+        {"Torso", "LeftUpperArm"},
+        {"LeftUpperArm", "LeftLowerArm"},
+        {"LeftLowerArm", "LeftHand"},
+        {"Torso", "RightUpperArm"},
+        {"RightUpperArm", "RightLowerArm"},
+        {"RightLowerArm", "RightHand"},
+        {"Torso", "LeftUpperLeg"},
+        {"LeftUpperLeg", "LeftLowerLeg"},
+        {"LeftLowerLeg", "LeftFoot"},
+        {"Torso", "RightUpperLeg"},
+        {"RightUpperLeg", "RightLowerLeg"},
+        {"RightLowerLeg", "RightFoot"},
+    }
+    
+    for _, bone in pairs(skeletonBones) do
+        local line = Instance.new("Frame")
+        line.Name = bone[1] .. "_" .. bone[2]
+        line.BorderSizePixel = 0
+        line.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+        line.Parent = ScreenGui
+        table.insert(espData.SkeletonParts, {Line = line, Bone = bone})
+    end
+    
+    ESPObjects[Player] = espData
+end
+
+-- Function to remove ESP for a player
+local function RemoveESP(Player)
+    if not ESPObjects[Player] then return end
+    
+    local espData = ESPObjects[Player]
+    espData.Folder:Destroy()
+    espData.BoxFrame:Destroy()
+    espData.UsernameLabel:Destroy()
+    espData.HealthBar.Background:Destroy()
+    
+    for _, part in pairs(espData.SkeletonParts) do
+        part.Line:Destroy()
+    end
+    
+    ESPObjects[Player] = nil
+end
+
+-- Function to update ESP visuals
+local function UpdateESP()
+    for Player, espData in pairs(ESPObjects) do
+        if not Player or not Player.Parent or not Player.Character then
+            RemoveESP(Player)
+            continue
+        end
+        
+        local Character = Player.Character
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+        local Humanoid = Character:FindFirstChild("Humanoid")
+        
+        if not HumanoidRootPart or not Humanoid then continue end
+        
+        local Distance = (HumanoidRootPart.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+        
+        if Distance > Config.ESP_Range then
+            espData.BoxFrame.Visible = false
+            espData.UsernameLabel.Visible = false
+            espData.HealthBar.Background.Visible = false
+            for _, part in pairs(espData.SkeletonParts) do
+                part.Line.Visible = false
+            end
+            continue
+        end
+        
+        -- Update Box
+        local screenPos, onScreen = Camera:WorldToScreenPoint(HumanoidRootPart.Position)
+        if onScreen then
+            local size = (Camera.Focus.Position - HumanoidRootPart.Position).Magnitude
+            local boxSize = math.max(50, 2000 / size)
+            
+            espData.BoxFrame.Size = UDim2.new(0, boxSize, 0, boxSize * 1.5)
+            espData.BoxFrame.Position = UDim2.new(0, screenPos.X - boxSize / 2, 0, screenPos.Y - boxSize * 0.75)
+            espData.BoxFrame.Visible = true
+            
+            -- Update Username
+            espData.UsernameLabel.Size = UDim2.new(0, boxSize, 0, 20)
+            espData.UsernameLabel.Position = UDim2.new(0, screenPos.X - boxSize / 2, 0, screenPos.Y - boxSize * 0.75 - 20)
+            espData.UsernameLabel.Visible = true
+            
+            -- Update Health Bar
+            local healthPercent = Humanoid.Health / Humanoid.MaxHealth
+            espData.HealthBar.Background.Size = UDim2.new(0, 8, 0, boxSize * 1.5)
+            espData.HealthBar.Background.Position = UDim2.new(0, screenPos.X - boxSize / 2 - 15, 0, screenPos.Y - boxSize * 0.75)
+            espData.HealthBar.Bar.Size = UDim2.new(1, 0, healthPercent, 0)
+            espData.HealthBar.Bar.BackgroundColor3 = Color3.fromRGB(255 * (1 - healthPercent), 255 * healthPercent, 0)
+            espData.HealthBar.Background.Visible = true
+            
+            -- Update Skeleton
+            for _, skeletonPart in pairs(espData.SkeletonParts) do
+                local bone = skeletonPart.Bone
+                local part1 = Character:FindFirstChild(bone[1])
+                local part2 = Character:FindFirstChild(bone[2])
+                
+                if part1 and part2 then
+                    local pos1, onScreen1 = Camera:WorldToScreenPoint(part1.Position)
+                    local pos2, onScreen2 = Camera:WorldToScreenPoint(part2.Position)
+                    
+                    if onScreen1 and onScreen2 then
+                        local line = skeletonPart.Line
+                        local distance = (Vector2.new(pos1.X, pos1.Y) - Vector2.new(pos2.X, pos2.Y)).Magnitude
+                        local angle = math.atan2(pos2.Y - pos1.Y, pos2.X - pos1.X)
+                        
+                        line.Size = UDim2.new(0, distance, 0, 2)
+                        line.Rotation = math.deg(angle)
+                        line.Position = UDim2.new(0, pos1.X, 0, pos1.Y)
+                        line.Visible = true
+                    else
+                        skeletonPart.Line.Visible = false
+                    end
+                else
+                    skeletonPart.Line.Visible = false
+                end
+            end
+        else
+            espData.BoxFrame.Visible = false
+            espData.UsernameLabel.Visible = false
+            espData.HealthBar.Background.Visible = false
+            for _, part in pairs(espData.SkeletonParts) do
+                part.Line.Visible = false
+            end
+        end
+    end
+end
+
+-- Function to find closest player
+local function GetClosestPlayer()
+    local closestPlayer = nil
+    local closestDistance = math.huge
+    
+    for _, Player in pairs(Players:GetPlayers()) do
+        if Player == LocalPlayer or not Player.Character then continue end
+        
+        local Character = Player.Character
+        local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
+        
+        if not HumanoidRootPart then continue end
+        
+        local Distance = (HumanoidRootPart.Position - LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+        
+        if Distance < closestDistance then
+            closestDistance = Distance
+            closestPlayer = Player
+        end
+    end
+    
+    return closestPlayer
+end
+
+-- Aimbot Function
+local function AimbotTick()
+    if not Config.AimbotEnabled or not LocalPlayer.
