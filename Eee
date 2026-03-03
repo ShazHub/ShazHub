@@ -15,12 +15,10 @@ local espToggle = Instance.new("TextButton")
 local aimbotToggle = Instance.new("TextButton")
 local guiToggle = Instance.new("TextButton")
 local performanceToggle = Instance.new("TextButton")
-local autoShootToggle = Instance.new("TextButton")
 local espEnabled = false
 local aimbotEnabled = false
 local guiVisible = true
 local performanceEnabled = false
-local autoShootEnabled = false
 
 -- ESP Settings
 local espRange = 200
@@ -47,7 +45,161 @@ local originalLightingSettings = {
 gui.Name = "ESP_Aimbot_GUI"
 gui.Parent = game:GetService("CoreGui")
 
-frame.Size = UDim2.new(0, 200, 0, 250)
+frame.Size = UDim2.new(0, 200, 0, 200)
+frame.Position = UDim2.new(0, 10, 0, 10)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+
+espToggle.Size = UDim2.new(0, 180, 0, 40)
+espToggle.Position = UDim2.new(0, 10, 0, 10)
+espToggle.Text = "ESP: Off"
+espToggleTo implement the new aimbot feature where the aim locks onto the ESP box and the head, and to ensure the ESP persists across rounds, we need to make several adjustments. We'll also remove the auto shoot feature as requested.
+
+Here's the updated script:
+
+```lua
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+
+-- Variables
+local localPlayer = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local gui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local espToggle = Instance.new("TextButton")
+local aimbotToggle = Instance.new("TextButton")
+local guiToggle = Instance.new("TextButton")
+local performanceToggle = Instance.new("TextButton")
+local espEnabled = false
+local aimbotEnabled = false
+local guiVisible = true
+local performanceEnabled = false
+
+-- ESP Settings
+local espRange = 200
+local espColor = Color3.new(1, 0, 0)
+
+-- Aimbot Settings
+local aimbotRange = 200
+
+-- Performance Settings
+local originalLightingSettings = {
+    Ambient = Lighting.Ambient,
+    Brightness = Lighting.Brightness,
+    ColorShift\_Bottom = Lighting.ColorShift\_Bottom,
+    ColorShift\_Top = Lighting.ColorShift\_Top,
+    FogColor = Lighting.FogColor,
+    FogEnd = Lighting.FogEnd,
+    FogStart = Lighting.FogStart,
+    GlobalShadows = Lighting.GlobalShadows,
+    OutdoorAmbient = Lighting.OutdoorAmbient,
+    TimeOfDay = Lighting.ClockTime
+}
+
+-- Create GUI
+gui.Name = "ESP\_Aimbot\_GUI"
+gui.Parent = game:GetService("CoreGui")
+
+frame.Size = UDim2.new(0, 200, 0, 200)
+frame.Position = UDim2.new(0, 10, 0, 10)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Parent = gui
+
+espToggle.Size = UDim2.new(0, 180, 0, 40)
+espToggle.Position = UDim2.new(0, 10, 0, 10)
+espToggle.Text = "ESP: Off"
+espToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+espToggle.BorderSizePixel = 0
+espToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+espToggle.Font = Enum.Font.SourceSans
+espToggle.TextSize = 20
+espToggle.Parent = frame
+
+aimbotToggle.Size = UDim2.new(0, 180, 0, 40)
+aimbotToggle.Position = UDim2.new(0, 10, 0, 60)
+aimbotToggle.Text = "Aimbot: Off"
+aimbotToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+aimbotToggle.BorderSizePixel = 0
+aimbotToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+aimbotToggle.Font = Enum.Font.SourceSans
+aimbotToggle.TextSize = 20
+aimbotToggle.Parent = frame
+
+guiToggle.Size = UDim2.new(0, 180, 0, 40)
+guiToggle.Position = UDim2.new(0, 10, 0, 110)
+guiToggle.Text = "Hide GUI"
+guiToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+guiToggle.BorderSizePixel = 0
+guiToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+guiToggle.Font = Enum.Font.SourceSans
+guiToggle.TextSize = 20
+guiToggle.Parent = frame
+
+performanceToggle.Size = UDim2.new(0, 180, 0, 40)
+performanceToggle.Position = UDim2.new(0, 10, 0, 160)
+performanceToggle.Text = "Performance: Off"
+performanceToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+performanceToggle.BorderSizePixel = 0
+performanceToggle.TextColor3To implement the new aimbot feature where the aim locks onto the ESP box and the head, and to ensure the ESP persists across rounds, we need to make several adjustments. We'll also remove the auto shoot feature as requested.
+
+Here's the updated script:
+
+```lua
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+
+-- Variables
+local localPlayer = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local gui = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local espToggle = Instance.new("TextButton")
+local aimbotToggle = Instance.new("TextButton")
+local guiToggle = Instance.new("TextButton")
+local performanceToggle = Instance.new("TextButton")
+local espEnabled = false
+local aimbotEnabled = false
+local guiVisible = true
+local performanceEnabled = false
+
+-- ESP Settings
+local espRange = 200
+local espColor = Color3.new(1, 0, 0)
+
+-- Aimbot Settings
+local aimbotRange = 200
+
+-- Performance Settings
+local originalLightingSettings = {
+    Ambient = Lighting.Ambient,
+    Brightness = Lighting.Brightness,
+    ColorShift_Bottom = Lighting.ColorShift_Bottom,
+    ColorShift_Top = Lighting.ColorShift_Top,
+    FogColor = Lighting.FogColor,
+    FogEnd = Lighting.FogEnd,
+    FogStart = Lighting.FogStart,
+    GlobalShadows = Lighting.GlobalShadows,
+    OutdoorAmbient = Lighting.OutdoorAmbient,
+    TimeOfDay = Lighting.ClockTime
+}
+
+-- Create GUI
+gui.Name = "ESP_Aimbot_GUI"
+gui.Parent = game:GetService("CoreGui")
+
+frame.Size = UDim2.new(0, 200, 0, 200)
 frame.Position = UDim2.new(0, 10, 0, 10)
 frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 frame.BorderSizePixel = 0
@@ -92,16 +244,6 @@ performanceToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 performanceToggle.Font = Enum.Font.SourceSans
 performanceToggle.TextSize = 20
 performanceToggle.Parent = frame
-
-autoShootToggle.Size = UDim2.new(0, 180, 0, 40)
-autoShootToggle.Position = UDim2.new(0, 10, 0, 210)
-autoShootToggle.Text = "Auto Shoot: Off"
-autoShootToggle.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-autoShootToggle.BorderSizePixel = 0
-autoShootToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-autoShootToggle.Font = Enum.Font.SourceSans
-autoShootToggle.TextSize = 20
-autoShootToggle.Parent = frame
 
 -- ESP Function
 local espPlayers = {}
@@ -243,37 +385,19 @@ local function aimAtPlayer(player)
     local head = character:FindFirstChild("Head")
     if not head then return end
 
-    local targetPosition = head.Position
-    local localPosition = localPlayer.Character.HumanoidRootPart.Position
-    local direction = (targetPosition - localPosition).unit
-    direction = Vector3.new(direction.X, 0, direction.Z) -- Only move horizontally
+    local boxPosition, onScreen = camera:WorldToViewportPoint(humanoidRootPart.Position)
+    local headPosition, headOnScreen = camera:WorldToViewportPoint(head.Position)
 
-    localPlayer.Character:SetPrimaryPartCFrame(CFrame.new(localPosition, localPosition + direction))
-end
+    if onScreen and headOnScreen then
+        local targetPosition = Vector3.new(
+            boxPosition.X,
+            headPosition.Y,
+            boxPosition.Z
+        )
+        local direction = (targetPosition - localPlayer.Character.HumanoidRootPart.Position).unit
+        direction = Vector3.new(direction.X, 0, direction.Z) -- Only move horizontally
 
--- Auto Shoot Function
-local function autoShoot(player)
-    local character = player.Character
-    if not character then return end
-
-    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
-    if not humanoidRootPart then return end
-
-    local head = character:FindFirstChild("Head")
-    if not head then return end
-
-    local ray = Ray.new(localPlayer.Character.HumanoidRootPart.Position, (head.Position - localPlayer.Character.HumanoidRootPart.Position).unit * 1000)
-    local hit, position = Workspace:FindPartOnRay(ray, localPlayer.Character)
-
-    if hit and hit.Parent == character then
-        local mouse = localPlayer:GetMouse()
-        mouse.Button1Down:Connect(function()
-            if autoShootEnabled then
-                mouse.Button1Down:Connect(function()
-                    localPlayer.Character.Humanoid:MoveTo(head.Position)
-                end)
-            end
-        end)
+        localPlayer.Character:SetPrimaryPartCFrame(CFrame.new(localPlayer.Character.HumanoidRootPart.Position, localPlayer.Character.HumanoidRootPart.Position + direction))
     end
 end
 
@@ -376,12 +500,6 @@ performanceToggle.MouseButton1Click:Connect(function()
     end
 end)
 
--- Toggle Auto Shoot
-autoShootToggle.MouseButton1Click:Connect(function()
-    autoShootEnabled = not autoShootEnabled
-    autoShootToggle.Text = "Auto Shoot: " .. (autoShootEnabled and "On" or "Off")
-end)
-
 -- Aimbot Logic
 RunService.RenderStepped:Connect(function()
     if aimbotEnabled then
@@ -406,9 +524,6 @@ RunService.RenderStepped:Connect(function()
 
         if closestPlayer then
             aimAtPlayer(closestPlayer)
-            if autoShootEnabled then
-                autoShoot(closestPlayer)
-            end
         end
     end
 end)
